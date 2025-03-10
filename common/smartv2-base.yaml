@@ -74,8 +74,8 @@ wifi:
   on_disconnect:
     - script.execute: control_leds
   ap:
-    ssid: "Respeaker-Satellite"
-    password: "lNw0AP2PKQGR"
+    ssid: "Smartv2-Satellite"
+    password: "mW9Vf1PmlWBz"
 
 logger:
   level: debug
@@ -92,7 +92,7 @@ select:
 
 api:
   encryption:
-    key: "ZCgwWwJTbF0/EQpyOkSOl+nYyghZdE9n5tRAoEMnWDk="
+    key: "t1U0ESXLJgOt1Oh1RrKX8WpdajP1vr6yVe/QMFHSIkU="
   id: api_id
   actions:
     - action: start_va
