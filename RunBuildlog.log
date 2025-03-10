@@ -573,3 +573,14 @@ esp32_improv: [source smartv2-factory.yaml:39]
         - lambda: !lambda |-
             id(improv_ble_in_progress) = false;
         - script.execute: 
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+esp32_improv: [source smartv2-factory.yaml:39]
+  
+  'authorizer' is a required option for [esp32_improv].
+  {}

@@ -35,5 +35,3 @@ improv_serial:
 
 esp32_ble:
   name: smartv2-ble
-
-esp32_improv:
