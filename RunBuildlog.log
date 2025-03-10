@@ -551,3 +551,25 @@ script: [source common/smartv2-base.yaml:612]
         sensor.rotary_encoder.set_value: 
           id: dial
           value: 0
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+esp32_improv: [source smartv2-factory.yaml:39]
+  
+  Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+  authorizer: user_button
+  on_start: 
+    - then: 
+        - lambda: !lambda |-
+            id(improv_ble_in_progress) = true;
+        - script.execute: 
+            id: control_leds
+  on_provisioned: 
+    - then: 
+        - lambda: !lambda |-
+            id(improv_ble_in_progress) = false;
+        - script.execute: 

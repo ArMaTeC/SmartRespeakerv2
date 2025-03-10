@@ -27,7 +27,7 @@ dashboard_import:
 
 wifi:
   on_connect:
-    - delay: 5s  # Gives time for improv results to be transmitted
+    - delay: 5s
     - ble.disable:
     - script.execute: control_leds
 
@@ -37,13 +37,3 @@ esp32_ble:
   name: smartv2-ble
 
 esp32_improv:
-  authorizer: user_button
-  on_start:
-    - lambda: id(improv_ble_in_progress) = true;
-    - script.execute: control_leds
-  on_provisioned:
-    - lambda: id(improv_ble_in_progress) = false;
-    - script.execute: control_leds
-  on_stop:
-    - lambda: id(improv_ble_in_progress) = false;
-    - script.execute: control_leds
