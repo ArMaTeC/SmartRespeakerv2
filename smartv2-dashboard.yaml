@@ -1,0 +1,12 @@
+packages:
+  smartv2-satellite: !include common/smartv2-base.yaml
+
+esphome:
+  friendly_name: smartv2 Satellite
+  name_add_mac_suffix: false
+
+wifi:
+  ap:
+    ssid: "Smartv2 Satellite"
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
