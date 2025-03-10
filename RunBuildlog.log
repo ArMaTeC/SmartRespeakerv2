@@ -861,3 +861,2251 @@ HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
  - toolchain-riscv32-esp @ 12.2.0+20230208 
  - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
 Reading CMake configuration...
+Generating assembly for certificate bundle...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+|-- ESPMicroSpeechFeatures @ 1.1.0
+|-- Improv @ 1.2.4
+|-- esp-audio-libs @ 1.1.1
+|-- noise-c @ 0.1.6
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\aic3204\aic3204.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\api_connection.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\api_frame_helper.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\api_pb2.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\api_pb2_service.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\api_server.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\list_entities.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\proto.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\subscribe_state.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\api\user_services.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\audio\audio.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\audio\audio_decoder.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\audio\audio_reader.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\audio\audio_resampler.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\audio\audio_transfer_buffer.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\binary_sensor\automation.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\binary_sensor\binary_sensor.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\binary_sensor\filter.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\button\button.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\dashboard_import\dashboard_import.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_component.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_esp32.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_esp8266.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_host.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_libretiny.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\debug\debug_rp2040.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32\core.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32\gpio.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32\preferences.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32_ble\ble.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32_ble\ble_advertising.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32_ble\ble_uuid.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esp32_rmt_led_strip\led_strip.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\esphome\ota\ota_esphome.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\event\event.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\factory_reset\button\factory_reset_button.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\gpio\switch\gpio_switch.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\http_request\http_request.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\http_request\http_request_arduino.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\http_request\http_request_idf.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\http_request\ota\ota_http_request.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\i2c\i2c.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\i2c\i2c_bus_arduino.cpp.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:10,
+                 from src/esphome/components/micro_wake_word/micro_wake_word.h:6,
+                 from src/esphome/components/voice_assistant/voice_assistant.h:16,
+                 from src/esphome/components/api/api_connection.cpp:22:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_pair.h:60,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_algobase.h:64,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\deque:60,
+                 from src/esphome/components/api/api_frame_helper.h:3,
+                 from src/esphome/components/api/api_connection.h:5,
+                 from src/esphome/components/api/api_connection.cpp:1:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\i2c\i2c_bus_esp_idf.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\i2s_audio\i2s_audio.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\i2s_audio\speaker\i2s_audio_speaker.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\improv_base\improv_base.cpp.o
+In file included from src/esphome/components/i2s_audio/i2s_audio.h:5,
+                 from src/esphome/components/i2s_audio/i2s_audio.cpp:1:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+In file included from src/esphome/components/i2s_audio/speaker/../i2s_audio.h:5,
+                 from src/esphome/components/i2s_audio/speaker/i2s_audio_speaker.h:5,
+                 from src/esphome/components/i2s_audio/speaker/i2s_audio_speaker.cpp:1:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\improv_serial\improv_serial_component.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\json\json_util.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\addressable_light.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\automation.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\esp_color_correction.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\esp_hsv_color.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\esp_range_view.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\light_call.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\light_json_schema.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\light_output.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\light\light_state.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger_esp32.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger_esp8266.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger_host.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger_libretiny.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\logger_rp2040.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\logger\select\logger_level_select.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\md5\md5.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_component.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_esp32.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_esp8266.cpp.o
+In file included from src/esphome/components/improv_serial/improv_serial_component.h:20,
+                 from src/esphome/components/improv_serial/improv_serial_component.cpp:1:
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_ena_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:50:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   50 |     USB_SERIAL_JTAG.int_ena.val |= mask;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_disable_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:62:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   62 |     USB_SERIAL_JTAG.int_ena.val &= (~mask);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_host.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_libretiny.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mdns\mdns_rp2040.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\media_player\media_player.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\micro_wake_word\micro_wake_word.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\micro_wake_word\streaming_model.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\mixer\speaker\mixer_speaker.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\nabu_microphone\nabu_microphone.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\network\util.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend_arduino_esp32.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend_arduino_esp8266.cpp.o
+In file included from src/esphome/components/i2s_audio/i2s_audio.h:5,
+                 from src/esphome/components/nabu_microphone/nabu_microphone.h:8,
+                 from src/esphome/components/nabu_microphone/nabu_microphone.cpp:1:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend_arduino_libretiny.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend_arduino_rp2040.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\ota\ota_backend_esp_idf.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\partition\light_partition.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\psram\psram.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\resampler\speaker\resampler_speaker.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\respeaker_lite\respeaker_lite.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\restart\button\restart_button.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\safe_mode\safe_mode.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\script\script.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\select\select.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\select\select_call.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\select\select_traits.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\sensor\automation.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\sensor\filter.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\sensor\sensor.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\socket\bsd_sockets_impl.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\socket\lwip_raw_tcp_impl.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\socket\lwip_sockets_impl.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\socket\socket.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\speaker\media_player\audio_pipeline.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\speaker\media_player\speaker_media_player.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\switch\automation.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\switch\switch.cpp.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:10,
+                 from src/esphome/components/micro_wake_word/micro_wake_word.h:6,
+                 from src/esphome/components/micro_wake_word/micro_wake_word.cpp:1:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_pair.h:60,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_algobase.h:64,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\specfun.h:45,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\cmath:1935,
+                 from src/esphome/core/helpers.h:3,
+                 from src/esphome/core/preferences.h:6,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:7:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:10,
+                 from src/esphome/components/micro_wake_word/streaming_model.cpp:3:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_pair.h:60,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_algobase.h:64,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\specfun.h:45,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\cmath:1935,
+                 from src/esphome/core/helpers.h:3,
+                 from src/esphome/core/preferences.h:6,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:7:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\template\sensor\template_sensor.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\template\switch\template_switch.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\template\text_sensor\template_text_sensor.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\text_sensor\filter.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\text_sensor\text_sensor.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\update\update_entity.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\voice_assistant\voice_assistant.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\watchdog\watchdog.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component_esp32_arduino.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component_esp8266.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component_esp_idf.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component_libretiny.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\components\wifi\wifi_component_pico_w.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\application.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\color.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\component.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\component_iterator.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\controller.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\entity_base.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\helpers.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\log.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\ring_buffer.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\scheduler.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\string_ref.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\time.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\esphome\core\util.cpp.o
+Compiling .pioenvs\smartv2-satellite\src\main.cpp.o
+Generating LD script .pioenvs\smartv2-satellite\memory.ld
+Compiling .pioenvs\smartv2-satellite\app_trace\app_trace.c.o
+Compiling .pioenvs\smartv2-satellite\app_trace\app_trace_util.c.o
+Compiling .pioenvs\smartv2-satellite\app_trace\host_file_io.c.o
+Compiling .pioenvs\smartv2-satellite\app_trace\port\port_uart.c.o
+Compiling .pioenvs\smartv2-satellite\app_update\esp_ota_ops.c.o
+Compiling .pioenvs\smartv2-satellite\app_update\esp_ota_app_desc.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_common.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_common_loader.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_clock_init.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_mem.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\app_trace\libapp_trace.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\app_update\libapp_update.a
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_random.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_random_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_efuse.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\flash_encrypt.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\secure_boot.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\bootloader_flash\src\bootloader_flash.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\bootloader_flash\src\flash_qio_mode.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\bootloader_flash\src\bootloader_flash_config_esp32s3.c.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome/components/micro_wake_word/streaming_model.h:10,
+                 from src/esphome/components/micro_wake_word/micro_wake_word.h:6,
+                 from src/esphome/components/voice_assistant/voice_assistant.h:16,
+                 from src/esphome/components/voice_assistant/voice_assistant.cpp:1:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_pair.h:60,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\stl_algobase.h:64,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\vector:60,
+                 from src/esphome/core/automation.h:3,
+                 from src/esphome/components/voice_assistant/voice_assistant.h:7:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\bootloader_utility.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\flash_partitions.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\esp_image_format.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader_support\src\idf\bootloader_sha.c.o
+Compiling .pioenvs\smartv2-satellite\bt\controller\esp32c3\bt.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\core\btc_alarm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\api\esp_blufi_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\hci_log\bt_hci_log.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\core\btc_manage.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\core\btc_task.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\bootloader_support\libbootloader_support.a
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\profile\esp\blufi\blufi_prf.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\profile\esp\blufi\blufi_protocol.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\alarm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\allocator.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\buffer.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\config.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\fixed_queue.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\pkt_queue.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\fixed_pkt_queue.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\future.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\hash_functions.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\hash_map.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\list.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\mutex.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\thread.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\osi.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\osi\semaphore.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\mem\bt_osi_mem.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_a2dp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_avrc_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_bt_device.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_bt_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_gap_ble_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_gap_bt_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_gatt_common_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_gattc_api.c.o
+In file included from src/esphome\components\i2s_audio\i2s_audio.h:5,
+                 from src/esphome.h:55,
+                 from src/main.cpp:3:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_gatts_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_hidd_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_hidh_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_hf_ag_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_hf_client_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_spp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_sdp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\api\esp_l2cap_bt_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\ar\bta_ar.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_aact.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_cfg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_ci.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\av\bta_av_ssm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_cfg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_ci.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_pm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_sco.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\dm\bta_dm_qos.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatt_common.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_cache.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_ci.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gattc_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatts_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatts_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatts_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatts_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\gatt\bta_gatts_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hd\bta_hd_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hd\bta_hd_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hd\bta_hd_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_cfg.c.o
+In file included from src/esphome\components\improv_serial\improv_serial_component.h:20,
+                 from src/esphome.h:58:
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_ena_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:50:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   50 |     USB_SERIAL_JTAG.int_ena.val |= mask;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_disable_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:62:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   62 |     USB_SERIAL_JTAG.int_ena.val &= (~mask);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_le.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hh\bta_hh_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\jv\bta_jv_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\jv\bta_jv_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\jv\bta_jv_cfg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\jv\bta_jv_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_at.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_cfg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_cmd.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_rfc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_sco.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_ag\bta_ag_sdp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_at.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_cmd.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_rfc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_sco.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\hf_client\bta_hf_client_sdp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sdp\bta_sdp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sdp\bta_sdp_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sdp\bta_sdp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sdp\bta_sdp_cfg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sys\bta_sys_conn.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sys\bta_sys_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\bta\sys\utl.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_ble_storage.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_config.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_dev.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_dm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_profile_queue.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_sec.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_sm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_storage.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\core\btc_util.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\bta_av_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\btc_a2dp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\btc_a2dp_control.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\btc_a2dp_sink.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\btc_a2dp_source.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\a2dp\btc_av.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\avrc\btc_avrc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\avrc\bta_avrc_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hf_ag\bta_ag_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hf_ag\btc_hf_ag.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hf_client\btc_hf_client.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hf_client\bta_hf_client_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hid\btc_hd.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hid\btc_hh.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\hid\bta_hh_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gap\btc_gap_ble.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gap\btc_gap_bt.c.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome\components\micro_wake_word\streaming_model.h:10,
+                 from src/esphome\components\micro_wake_word\micro_wake_word.h:6,
+                 from src/esphome.h:85:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\char_traits.h:42,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\string:40,
+                 from src/esphome/core/hal.h:2,
+                 from src/esphome/components/audio_dac/audio_dac.h:4,
+                 from src/esphome\components\aic3204\aic3204.h:3,
+                 from src/esphome.h:3:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gap\bta_gap_bt_co.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gatt\btc_gatt_common.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gatt\btc_gatt_util.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gatt\btc_gattc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\gatt\btc_gatts.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\spp\btc_spp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\sdp\btc_sdp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\btc\profile\std\l2cap\btc_l2cap.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\device\bdaddr.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\device\controller.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\device\interop.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\alloc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\bitalloc-sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\bitalloc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\bitstream-decode.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\decoder-oina.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\decoder-private.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\decoder-sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\dequant.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\framing-sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\framing.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\oi_codec_version.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\synthesis-8-generated.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\synthesis-dct8.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\decoder\srce\synthesis-sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_analysis.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_dct.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_dct_coeffs.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_enc_bit_alloc_mono.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_enc_bit_alloc_ste.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_enc_coeffs.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_encoder.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\encoder\srce\sbc_packing.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\external\sbc\plc\sbc_plc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\hci_audio.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\hci_hal_h4.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\hci_layer.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\hci_packet_factory.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\hci_packet_parser.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\hci\packet_fragmenter.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\main\bte_init.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\main\bte_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\a2dp\a2d_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\a2dp\a2d_sbc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avct\avct_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avct\avct_ccb.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avct\avct_l2c.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avct\avct_lcb.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avct\avct_lcb_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_ad.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_ccb.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_ccb_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_l2c.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_msg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_scb.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avdt\avdt_scb_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_bld_ct.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_bld_tg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_opt.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_pars_ct.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_pars_tg.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_sdp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\avrc\avrc_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hid\hidd_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hid\hidd_conn.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hid\hidh_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hid\hidh_conn.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_acl.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_addr.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_adv_filter.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_batchscan.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_bgconn.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_cont_energy.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_gap.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_5_gap.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_multi_adv.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_ble_privacy.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_dev.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_devctl.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_inq.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_pm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_sco.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btm\btm_sec.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btu\btu_hcif.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btu\btu_init.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\btu\btu_task.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gap\gap_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gap\gap_ble.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gap\gap_conn.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gap\gap_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\att_protocol.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_attr.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_auth.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_cl.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_db.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_sr.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_sr_hash.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\gatt\gatt_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hcic\hciblecmds.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\hcic\hcicmds.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_ble.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_csm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_fcr.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_link.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_ucd.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2c_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\l2cap\l2cap_client.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\port_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\port_rfc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\port_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_l2cap_if.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_mx_fsm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_port_fsm.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_port_if.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_ts_frames.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\rfcomm\rfc_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_db.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_discovery.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_server.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\sdp\sdp_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\aes.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\p_256_curvepara.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\p_256_ecc_pp.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\p_256_multprecision.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_act.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_api.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_br_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_cmac.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_keys.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_l2c.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_main.c.o
+Compiling .pioenvs\smartv2-satellite\bt\host\bluedroid\stack\smp\smp_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\common\btc\profile\esp\blufi\bluedroid_host\esp_blufi.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\utils.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\sha256.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ecc.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ctr_prng.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ctr_mode.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\aes_decrypt.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\aes_encrypt.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ccm_mode.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ecc_dsa.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\cmac_mode.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ecc_dh.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\hmac_prng.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\ecc_platform_specific.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\hmac.c.o
+Compiling .pioenvs\smartv2-satellite\bt\porting\ext\tinycrypt\src\cbc_mode.c.o
+Compiling .pioenvs\smartv2-satellite\cmock\CMock\src\cmock.c.o
+Compiling .pioenvs\smartv2-satellite\console\commands.c.o
+Compiling .pioenvs\smartv2-satellite\console\esp_console_repl.c.o
+Compiling .pioenvs\smartv2-satellite\console\split_argv.c.o
+Compiling .pioenvs\smartv2-satellite\console\linenoise\linenoise.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_cmd.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_date.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_dbl.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_dstr.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_end.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_file.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_hashtable.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_int.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\cmock\libcmock.a
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_lit.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\bt\libbt.a
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_rem.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_rex.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_str.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\arg_utils.c.o
+Compiling .pioenvs\smartv2-satellite\console\argtable3\argtable3.c.o
+Compiling .pioenvs\smartv2-satellite\cxx\cxx_exception_stubs.cpp.o
+Compiling .pioenvs\smartv2-satellite\cxx\cxx_guards.cpp.o
+Compiling .pioenvs\smartv2-satellite\driver\gpio\gpio.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gpio\gpio_glitch_filter_ops.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gpio\rtc_io.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\spi_bus_lock.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\adc_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\adc_dma_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gpio\dedic_gpio.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gpio\gpio_pin_glitch_filter.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gptimer\gptimer.c.o
+Compiling .pioenvs\smartv2-satellite\driver\gptimer\gptimer_priv.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\timer_legacy.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\console\libconsole.a
+Compiling .pioenvs\smartv2-satellite\driver\i2c\i2c.c.o
+Compiling .pioenvs\smartv2-satellite\driver\i2s\i2s_common.c.o
+Compiling .pioenvs\smartv2-satellite\driver\i2s\i2s_std.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\i2s_legacy.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\cxx\libcxx.a
+Compiling .pioenvs\smartv2-satellite\driver\i2s\i2s_pdm.c.o
+Compiling .pioenvs\smartv2-satellite\driver\i2s\i2s_tdm.c.o
+Compiling .pioenvs\smartv2-satellite\driver\ledc\ledc.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_cap.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_cmpr.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_com.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_fault.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_gen.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_oper.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_sync.c.o
+Compiling .pioenvs\smartv2-satellite\driver\mcpwm\mcpwm_timer.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\mcpwm_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\pcnt\pulse_cnt.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\pcnt_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\rmt\rmt_common.c.o
+Compiling .pioenvs\smartv2-satellite\driver\rmt\rmt_encoder.c.o
+Compiling .pioenvs\smartv2-satellite\driver\rmt\rmt_rx.c.o
+Compiling .pioenvs\smartv2-satellite\driver\rmt\rmt_tx.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\rmt_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\sdmmc\sdmmc_transaction.c.o
+Compiling .pioenvs\smartv2-satellite\driver\sdmmc\sdmmc_host.c.o
+Compiling .pioenvs\smartv2-satellite\driver\sigma_delta\sdm.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\sigma_delta_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\gpspi\spi_common.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\gpspi\spi_master.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\gpspi\spi_slave.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\sdspi\sdspi_crc.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\sdspi\sdspi_host.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\sdspi\sdspi_transaction.c.o
+Compiling .pioenvs\smartv2-satellite\driver\spi\gpspi\spi_slave_hd.c.o
+Compiling .pioenvs\smartv2-satellite\driver\temperature_sensor\temperature_sensor.c.o
+Compiling .pioenvs\smartv2-satellite\driver\deprecated\rtc_temperature_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\driver\touch_sensor\touch_sensor_common.c.o
+Compiling .pioenvs\smartv2-satellite\driver\touch_sensor\esp32s3\touch_sensor.c.o
+Compiling .pioenvs\smartv2-satellite\driver\twai\twai.c.o
+Compiling .pioenvs\smartv2-satellite\driver\uart\uart.c.o
+Compiling .pioenvs\smartv2-satellite\driver\usb_serial_jtag\usb_serial_jtag.c.o
+Compiling .pioenvs\smartv2-satellite\driver\usb_serial_jtag\usb_serial_jtag_connection_monitor.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\esp32s3\esp_efuse_table.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\esp32s3\esp_efuse_fields.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\esp32s3\esp_efuse_rtc_calib.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\esp32s3\esp_efuse_utility.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\src\esp_efuse_api.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\src\esp_efuse_fields.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\src\esp_efuse_utility.c.o
+Compiling .pioenvs\smartv2-satellite\efuse\src\efuse_controller\keys\with_key_purposes\esp_efuse_api_key.c.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\debug_log.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\fake_micro_context.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\flatbuffer_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\memory_helpers.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_allocation_info.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_context.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_interpreter.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_interpreter_context.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_interpreter_graph.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_log.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_op_resolver.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_profiler.cc.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\efuse\libefuse.a
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_resource_variable.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_time.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\micro_utils.cc.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\driver\libdriver.a
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\mock_micro_graph.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\recording_micro_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\system_setup.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\test_helper_custom_ops.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\test_helpers.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\activations.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\activations_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\add_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\add_n.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\arg_min_max.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\assign_variable.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\batch_matmul.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\batch_to_space_nd.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\broadcast_args.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\broadcast_to.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\call_once.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\cast.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\ceil.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\circular_buffer.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\circular_buffer_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\comparisons.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\concatenation.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\conv_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\cumsum.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\depth_to_space.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\depthwise_conv_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\dequantize.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\dequantize_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\detection_postprocess.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\div.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\elementwise.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\elu.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\embedding_lookup.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\ethosu.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\exp.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\expand_dims.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\fill.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\floor.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\floor_div.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\floor_mod.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\fully_connected_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\gather.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\gather_nd.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\hard_swish.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\hard_swish_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\if.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\kernel_runner.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\kernel_util.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\l2_pool_2d.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\l2norm.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\leaky_relu.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\leaky_relu_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\log_softmax.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\logical.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\logical_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\logistic.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\logistic_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\lstm_eval.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\lstm_eval_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\maximum_minimum.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\micro_tensor_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\mirror_pad.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\mul_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\neg.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\pack.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\pad.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\pooling_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\prelu.cc.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/kernels/mul_common.cc:19:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  150 |       [](const ArithmeticParams& params, const uint8_t input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:126:56: note: shadowed declaration is here
+  126 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  209 |       [](const ArithmeticParams& params, const T input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:171:44: note: shadowed declaration is here
+  171 | BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  249 |       [](const ArithmeticParams& params, const std::complex<float> input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:221:56: note: shadowed declaration is here
+  221 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\prelu_common.cc.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/kernels/lstm_eval.cc:25:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  150 |       [](const ArithmeticParams& params, const uint8_t input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:126:56: note: shadowed declaration is here
+  126 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  209 |       [](const ArithmeticParams& params, const T input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:171:44: note: shadowed declaration is here
+  171 | BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  249 |       [](const ArithmeticParams& params, const std::complex<float> input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:221:56: note: shadowed declaration is here
+  221 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\quantize.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\quantize_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\read_variable.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\reduce.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\reduce_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\reshape.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\reshape_common.cc.o
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In instantiation of 'typename std::enable_if<((! tflite::is_small_integer<T>::value) || enable_for_short_integers), void>::type tflite::reference_ops::BroadcastMul6DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = long int; bool enable_for_short_integers = false; typename std::enable_if<((! tflite::is_small_integer<T>::value) || enable_for_short_integers), void>::type = void]':
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:260:28:   required from 'void tflite::reference_ops::BroadcastMul4DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = long int]'
+components/esp-tflite-micro/tensorflow/lite/micro/kernels/mul_common.cc:141:40:   required from here
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  209 |       [](const ArithmeticParams& params, const T input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:171:44: note: shadowed declaration is here
+  171 | BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In instantiation of 'typename std::enable_if<((! tflite::is_small_integer<T>::value) || enable_for_short_integers), void>::type tflite::reference_ops::BroadcastMul6DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = float; bool enable_for_short_integers = false; typename std::enable_if<((! tflite::is_small_integer<T>::value) || enable_for_short_integers), void>::type = void]':
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:260:28:   required from 'void tflite::reference_ops::BroadcastMul4DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = float]'
+components/esp-tflite-micro/tensorflow/lite/micro/kernels/mul_common.cc:196:38:   required from here
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  209 |       [](const ArithmeticParams& params, const T input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:171:44: note: shadowed declaration is here
+  171 | BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\resize_bilinear.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\resize_nearest_neighbor.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\round.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\select.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\shape.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\slice.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\softmax_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\space_to_batch_nd.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\space_to_depth.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\split.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\split_v.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\squared_difference.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\squeeze.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\strided_slice.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\strided_slice_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\sub.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\sub_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\svdf.cc.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/kernels/sub.cc:24:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:264:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  264 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:256:47: note: shadowed declaration is here
+  256 | void BroadcastSubSlow(const ArithmeticParams& params,
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:284:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  284 |          const ArithmeticParams& params) {
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:272:59: note: shadowed declaration is here
+  272 | inline void BroadcastSub16POTSlow(const ArithmeticParams& params,
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  308 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:298:52: note: shadowed declaration is here
+  298 | void BroadcastQuantSubSlow(const ArithmeticParams& params,
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:420:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  420 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:413:34: note: shadowed declaration is here
+  413 | void Sub(const ArithmeticParams& params, const RuntimeShape& input1_shape,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/kernels/sub_common.cc:22:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:264:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  264 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:256:47: note: shadowed declaration is here
+  256 | void BroadcastSubSlow(const ArithmeticParams& params,
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:284:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  284 |          const ArithmeticParams& params) {
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:272:59: note: shadowed declaration is here
+  272 | inline void BroadcastSub16POTSlow(const ArithmeticParams& params,
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  308 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:298:52: note: shadowed declaration is here
+  298 | void BroadcastQuantSubSlow(const ArithmeticParams& params,
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:420:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  420 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:413:34: note: shadowed declaration is here
+  413 | void Sub(const ArithmeticParams& params, const RuntimeShape& input1_shape,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\svdf_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\tanh.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\transpose.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\transpose_conv.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\unidirectional_sequence_lstm.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\unpack.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\var_handle.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\while.cc.o
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In instantiation of 'void tflite::reference_ops::BroadcastSubSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = float]':
+components/esp-tflite-micro/tensorflow/lite/micro/kernels/sub.cc:48:44:   required from here
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:264:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  264 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:256:47: note: shadowed declaration is here
+  256 | void BroadcastSubSlow(const ArithmeticParams& params,
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In instantiation of 'void tflite::reference_ops::BroadcastQuantSubSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char]':
+components/esp-tflite-micro/tensorflow/lite/micro/kernels/sub.cc:91:53:   required from here
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  308 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:298:52: note: shadowed declaration is here
+  298 | void BroadcastQuantSubSlow(const ArithmeticParams& params,
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h: In instantiation of 'void tflite::reference_ops::BroadcastQuantSubSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = short int]':
+components/esp-tflite-micro/tensorflow/lite/micro/kernels/sub.cc:111:53:   required from here
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:308:62: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  308 |       [](T input1_val, T input2_val, const ArithmeticParams& params) {
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/sub.h:298:52: note: shadowed declaration is here
+  298 | void BroadcastQuantSubSlow(const ArithmeticParams& params,
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\zeros_like.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\tflite_bridge\flatbuffer_conversions_bridge.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\tflite_bridge\micro_error_reporter.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\add.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\conv.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\depthwise_conv.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\fully_connected.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\mul.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\pooling.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\kernels\esp_nn\softmax.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\delay.cc.o
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/kernels/esp_nn/mul.cc:21:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:150:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  150 |       [](const ArithmeticParams& params, const uint8_t input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:126:56: note: shadowed declaration is here
+  126 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:209:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  209 |       [](const ArithmeticParams& params, const T input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:171:44: note: shadowed declaration is here
+  171 | BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h: In lambda function:
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:249:34: warning: declaration of 'const tflite::ArithmeticParams& params' shadows a parameter [-Wshadow]
+  249 |       [](const ArithmeticParams& params, const std::complex<float> input1_val,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+components/esp-tflite-micro/tensorflow/lite/kernels/internal/reference/mul.h:221:56: note: shadowed declaration is here
+  221 | inline void BroadcastMul6DSlow(const ArithmeticParams& params,
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\energy.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\fft_auto_scale_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\fft_auto_scale_kernel.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\filter_bank.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\filter_bank_log.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\filter_bank_spectral_subtraction.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\filter_bank_square_root.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\filter_bank_square_root_common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\framer.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\irfft.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\overlap_add.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\pcan.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\rfft.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\stacker.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\micro\kernels\window.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\circular_buffer.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\energy.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\fft_auto_scale.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\filter_bank.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\filter_bank_log.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\filter_bank_spectral_subtraction.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\filter_bank_square_root.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\irfft_float.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\irfft_int16.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\irfft_int32.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\log.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\max_abs.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\msb_32.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\msb_64.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\overlap_add.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\pcan_argc_fixed.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\rfft_float.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\rfft_int16.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\rfft_int32.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\square_root_32.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\square_root_64.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\window.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\kiss_fft_wrappers\kiss_fft_float.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\kiss_fft_wrappers\kiss_fft_int16.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\signal\src\kiss_fft_wrappers\kiss_fft_int32.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\kernel_util.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\memory_planner\greedy_memory_planner.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\memory_planner\linear_memory_planner.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\arena_allocator\non_persistent_arena_buffer_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\arena_allocator\persistent_arena_buffer_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\arena_allocator\recording_single_arena_buffer_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\micro\arena_allocator\single_arena_buffer_allocator.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\core\c\common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\core\api\error_reporter.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\core\api\flatbuffer_conversions.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\core\api\tensor_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\common.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\quantization_util.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\portable_tensor_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\tensor_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\tensor_ctypes.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\reference\portable_tensor_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\kernels\internal\reference\comparisons.cc.o
+Compiling .pioenvs\smartv2-satellite\components\esp-tflite-micro\tensorflow\lite\schema\schema_utils.cc.o
+Compiling .pioenvs\smartv2-satellite\esp-tls\esp_tls.c.o
+Compiling .pioenvs\smartv2-satellite\esp-tls\esp-tls-crypto\esp_tls_crypto.c.o
+Compiling .pioenvs\smartv2-satellite\esp-tls\esp_tls_error_capture.c.o
+Compiling .pioenvs\smartv2-satellite\esp-tls\esp_tls_platform_port.c.o
+Compiling .pioenvs\smartv2-satellite\esp-tls\esp_tls_mbedtls.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_cali.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_cali_curve_fitting.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_oneshot.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\deprecated\esp_adc_cal_common_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_continuous.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\adc_filter.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\esp32s3\curve_fitting_coefficients.c.o
+Compiling .pioenvs\smartv2-satellite\esp_adc\deprecated\esp32s3\esp_adc_cal_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\esp_app_format\esp_app_desc.c.o
+Compiling .pioenvs\smartv2-satellite\esp_coex\src\coexist.c.o
+Compiling .pioenvs\smartv2-satellite\esp_coex\esp32s3\esp_coex_adapter.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp-tls\libesp-tls.a
+Compiling .pioenvs\smartv2-satellite\esp_common\src\esp_err_to_name.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_app_format\libesp_app_format.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_adc\libesp_adc.a
+Compiling .pioenvs\smartv2-satellite\esp_eth\src\esp_eth.c.o
+Compiling .pioenvs\smartv2-satellite\esp_eth\src\esp_eth_phy_802_3.c.o
+Compiling .pioenvs\smartv2-satellite\esp_eth\src\esp_eth_netif_glue.c.o
+Compiling .pioenvs\smartv2-satellite\esp_event\default_event_loop.c.o
+Compiling .pioenvs\smartv2-satellite\esp_event\esp_event.c.o
+Compiling .pioenvs\smartv2-satellite\esp_event\esp_event_private.c.o
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\gdbstub.c.o
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\gdbstub_transport.c.o
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\packet.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_coex\libesp_coex.a
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\port\xtensa\gdbstub_xtensa.c.o
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\port\xtensa\gdbstub-entry.S.o
+Compiling .pioenvs\smartv2-satellite\esp_gdbstub\src\port\xtensa\xt_debugexception.S.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\esp_hidd.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\esp_hidh.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\esp_hid_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\ble_hidd.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\ble_hidh.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\bt_hidh.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_event\libesp_event.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_eth\libesp_eth.a
+Compiling .pioenvs\smartv2-satellite\esp_hid\src\bt_hidd.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_gdbstub\libesp_gdbstub.a
+Compiling .pioenvs\smartv2-satellite\esp_http_client\esp_http_client.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_client\lib\http_auth.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_client\lib\http_header.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_client\lib\http_utils.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_main.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_parse.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_sess.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_common\libesp_common.a
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_txrx.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_uri.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\httpd_ws.c.o
+Compiling .pioenvs\smartv2-satellite\esp_http_server\src\util\ctrl_sock.c.o
+Compiling .pioenvs\smartv2-satellite\esp_https_ota\src\esp_https_ota.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_hid\libesp_hid.a
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\cpu.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\esp_cpu_intr.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\esp_memory_utils.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\cpu_region_protect.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\esp_clk.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\clk_ctrl_os.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\hw_random.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\intr_alloc.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\mac_addr.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\periph_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\revision.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\rtc_module.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_http_server\libesp_http_server.a
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_modes.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_http_client\libesp_http_client.a
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_console.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_gpio.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_https_ota\libesp_https_ota.a
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_event.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_modem.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\regi2c_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\esp_gpio_reserve.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sar_periph_ctrl_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\io_mux.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\esp_clk_tree.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp_clk_tree_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\adc_share_hw_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_cpu.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\dma\gdma.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\dma\async_memcpy_impl_gdma.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\dma\esp_async_memcpy.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\systimer.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\esp_hmac.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\esp_ds.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\mspi_timing_tuning.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\mspi_timing_config.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\sleep_wake_stub.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\rtc_clk.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\rtc_clk_init.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\rtc_init.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\rtc_sleep.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\rtc_time.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\chip_info.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\esp_crypto_lock.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\sar_periph_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp32s3\esp_memprot.c.o
+Compiling .pioenvs\smartv2-satellite\esp_hw_support\port\esp_memprot_conv.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_io.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_io_i2c.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_io_spi.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_nt35510.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_ssd1306.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_st7789.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_ops.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_io_i80.c.o
+Compiling .pioenvs\smartv2-satellite\esp_lcd\src\esp_lcd_panel_rgb.c.o
+Compiling .pioenvs\smartv2-satellite\esp_local_ctrl\src\esp_local_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_local_ctrl\src\esp_local_ctrl_handler.c.o
+Compiling .pioenvs\smartv2-satellite\esp_local_ctrl\proto-c\esp_local_ctrl.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\esp_local_ctrl\src\esp_local_ctrl_transport_ble.c.o
+Compiling .pioenvs\smartv2-satellite\esp_local_ctrl\src\esp_local_ctrl_transport_httpd.c.o
+Compiling .pioenvs\smartv2-satellite\esp_mm\esp_mmu_map.c.o
+Compiling .pioenvs\smartv2-satellite\esp_mm\port\esp32s3\ext_mem_layout.c.o
+Compiling .pioenvs\smartv2-satellite\esp_mm\esp_cache.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\esp_netif_handlers.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\esp_netif_objects.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\esp_netif_defaults.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\esp_netif_lwip.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_hw_support\libesp_hw_support.a
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\esp_netif_sntp.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\esp_netif_lwip_defaults.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\netif\wlanif.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\netif\ethernetif.c.o
+Compiling .pioenvs\smartv2-satellite\esp_netif\lwip\netif\esp_pbuf_ref.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_mm\libesp_mm.a
+Compiling .pioenvs\smartv2-satellite\esp_partition\partition.c.o
+Compiling .pioenvs\smartv2-satellite\esp_partition\partition_target.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_local_ctrl\libesp_local_ctrl.a
+Compiling .pioenvs\smartv2-satellite\esp_phy\src\phy_override.c.o
+Compiling .pioenvs\smartv2-satellite\esp_phy\src\lib_printf.c.o
+Compiling .pioenvs\smartv2-satellite\esp_phy\src\phy_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_phy\src\phy_init.c.o
+Compiling .pioenvs\smartv2-satellite\esp_phy\src\btbb_init.c.o
+Compiling .pioenvs\smartv2-satellite\esp_pm\pm_locks.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_lcd\libesp_lcd.a
+Compiling .pioenvs\smartv2-satellite\esp_pm\pm_trace.c.o
+Compiling .pioenvs\smartv2-satellite\esp_pm\pm_impl.c.o
+Compiling .pioenvs\smartv2-satellite\esp_psram\esp_psram.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_partition\libesp_partition.a
+Compiling .pioenvs\smartv2-satellite\esp_psram\mmu_psram_flash.c.o
+Compiling .pioenvs\smartv2-satellite\esp_psram\esp32s3\esp_psram_impl_octal.c.o
+Compiling .pioenvs\smartv2-satellite\esp_ringbuf\ringbuf.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_crc.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_sys.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_uart.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_spiflash.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_efuse.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_longjmp.S.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_netif\libesp_netif.a
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_systimer.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp-tflite-micro\libesp-tflite-micro.a
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_wdt.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_cache_esp32s2_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\esp_rom\patches\esp_rom_cache_writeback_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\esp_err.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\crosscore_int.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_phy\libesp_phy.a
+Compiling .pioenvs\smartv2-satellite\esp_system\esp_ipc.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\freertos_hooks.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\int_wdt.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\panic.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\esp_system.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\startup.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_pm\libesp_pm.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_psram\libesp_psram.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_rom\libesp_rom.a
+Compiling .pioenvs\smartv2-satellite\esp_system\system_time.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\stack_check.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\ubsan.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\xt_wdt.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_ringbuf\libesp_ringbuf.a
+Compiling .pioenvs\smartv2-satellite\esp_system\debug_stubs.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\task_wdt\task_wdt.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\task_wdt\task_wdt_impl_timergroup.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\cpu_start.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\panic_handler.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\esp_system_chip.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\brownout.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\highint_hdl.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\clk.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\reset_reason.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\system_internal.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\cache_err_int.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\soc\esp32s3\apb_backup_dma.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\panic_arch.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\panic_handler_asm.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\expression_with_stack.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\expression_with_stack_asm.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\debug_helpers.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\debug_helpers_asm.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\debug_stubs.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\trax.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\esp_ipc_isr.c.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\esp_ipc_isr_handler.S.o
+Compiling .pioenvs\smartv2-satellite\esp_system\port\arch\xtensa\esp_ipc_isr_routines.S.o
+Compiling .pioenvs\smartv2-satellite\esp_timer\src\esp_timer.c.o
+Compiling .pioenvs\smartv2-satellite\esp_timer\src\ets_timer_legacy.c.o
+Compiling .pioenvs\smartv2-satellite\esp_timer\src\system_time.c.o
+Compiling .pioenvs\smartv2-satellite\esp_timer\src\esp_timer_impl_common.c.o
+Compiling .pioenvs\smartv2-satellite\esp_timer\src\esp_timer_impl_systimer.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\mesh_event.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\smartconfig.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\wifi_init.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\wifi_default.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\wifi_netif.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\wifi_default_ap.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\esp32s3\esp_adapter.c.o
+Compiling .pioenvs\smartv2-satellite\esp_wifi\src\smartconfig_ack.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_common.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_system\libesp_system.a
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_flash.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_uart.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_elf.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_binary.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_sha.c.o
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\core_dump_crc.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_timer\libesp_timer.a
+Compiling .pioenvs\smartv2-satellite\espcoredump\src\port\xtensa\core_dump_port.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\activation_functions\esp_nn_relu_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\basic_math\esp_nn_add_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\basic_math\esp_nn_mul_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_opt.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_opt.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\fully_connected\esp_nn_fully_connected_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\softmax\esp_nn_softmax_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\softmax\esp_nn_softmax_opt.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\pooling\esp_nn_avg_pool_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\pooling\esp_nn_max_pool_ansi.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\common\esp_nn_common_functions_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\common\esp_nn_multiply_by_quantized_mult_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\common\esp_nn_multiply_by_quantized_mult_ver1_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\activation_functions\esp_nn_relu_s8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\basic_math\esp_nn_add_s8_esp32s3.S.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\esp_wifi\libesp_wifi.a
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\basic_math\esp_nn_mul_s8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s8_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_s16_mult8_esp32s3.S.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\espcoredump\libespcoredump.a
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_s8_mult8_1x1_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_s16_mult4_1x1_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_conv_s8_filter_aligned_input_padded_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s8_mult1_3x3_padded_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult1_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult1_3x3_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult1_3x3_no_pad_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult8_3x3_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult4_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\convolution\esp_nn_depthwise_conv_s16_mult8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\fully_connected\esp_nn_fully_connected_s8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\pooling\esp_nn_max_pool_s8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\managed_components\espressif__esp-nn\src\pooling\esp_nn_avg_pool_s8_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\fatfs\diskio\diskio.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\diskio\diskio_rawflash.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\diskio\diskio_sdmmc.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\diskio\diskio_wl.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\src\ff.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\port\freertos\ffsystem.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\src\ffunicode.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\vfs\vfs_fat.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\vfs\vfs_fat_sdmmc.c.o
+Compiling .pioenvs\smartv2-satellite\fatfs\vfs\vfs_fat_spiflash.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\heap_idf.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\esp_additions\idf_additions.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\espressif__esp-nn\libespressif__esp-nn.a
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\list.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\queue.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\tasks.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\timers.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\croutine.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\event_groups.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\stream_buffer.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\port.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\app_startup.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-openocd.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\port_common.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\portasm.S.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\port_systick.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\esp_additions\freertos_v8_compat.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\xtensa_context.S.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\xtensa_init.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\xtensa_overlay_os_hook.c.o
+Compiling .pioenvs\smartv2-satellite\freertos\FreeRTOS-Kernel\portable\xtensa\xtensa_vectors.S.o
+Compiling .pioenvs\smartv2-satellite\hal\mpu_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\efuse_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\esp32s3\efuse_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\mmu_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\cache_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\rtc_io_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\gpio_hal.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\fatfs\libfatfs.a
+Compiling .pioenvs\smartv2-satellite\hal\uart_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\uart_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\adc_hal_common.c.o
+Compiling .pioenvs\smartv2-satellite\hal\adc_oneshot_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\esp32s3\clk_tree_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_flash_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_flash_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_flash_encrypt_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\systimer_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\timer_hal.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\freertos\libfreertos.a
+Compiling .pioenvs\smartv2-satellite\hal\ledc_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\ledc_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\i2c_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\i2c_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\rmt_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\pcnt_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\mcpwm_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\twai_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\twai_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\gdma_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\i2s_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\sdm_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\adc_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\lcd_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\sha_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\aes_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\brownout_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_slave_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_slave_hal_iram.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_slave_hd_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\hmac_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\ds_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\usb_serial_jtag_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\usb_dwc_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\usb_wrap_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\spi_flash_hal_gpspi.c.o
+Compiling .pioenvs\smartv2-satellite\hal\touch_sensor_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\xt_wdt_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\esp32s3\touch_sensor_hal.c.o
+Compiling .pioenvs\smartv2-satellite\hal\esp32s3\rtc_cntl_hal.c.o
+Compiling .pioenvs\smartv2-satellite\heap\heap_caps_base.c.o
+Compiling .pioenvs\smartv2-satellite\heap\heap_caps.c.o
+Compiling .pioenvs\smartv2-satellite\heap\heap_caps_init.c.o
+Compiling .pioenvs\smartv2-satellite\heap\multi_heap.c.o
+Compiling .pioenvs\smartv2-satellite\heap\tlsf\tlsf.c.o
+Compiling .pioenvs\smartv2-satellite\heap\port\memory_layout_utils.c.o
+Compiling .pioenvs\smartv2-satellite\heap\port\esp32s3\memory_layout.c.o
+Compiling .pioenvs\smartv2-satellite\http_parser\http_parser.c.o
+Compiling .pioenvs\smartv2-satellite\json\cJSON\cJSON.c.o
+Compiling .pioenvs\smartv2-satellite\json\cJSON\cJSON_Utils.c.o
+Compiling .pioenvs\smartv2-satellite\log\log.c.o
+Compiling .pioenvs\smartv2-satellite\log\log_buffers.c.o
+Compiling .pioenvs\smartv2-satellite\log\log_freertos.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\hal\libhal.a
+Compiling .pioenvs\smartv2-satellite\lwip\apps\sntp\sntp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\api_lib.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\api_msg.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\err.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\if_api.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\netbuf.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\netdb.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\netifapi.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\sockets.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\api\tcpip.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\apps\sntp\sntp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\apps\netbiosns\netbiosns.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\log\liblog.a
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\def.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\heap\libheap.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\json\libjson.a
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\dns.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\inet_chksum.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\init.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ip.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\mem.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\memp.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\http_parser\libhttp_parser.a
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\netif.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\pbuf.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\raw.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\stats.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\sys.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\tcp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\tcp_in.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\tcp_out.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\timeouts.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\udp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\autoip.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\dhcp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\etharp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\icmp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\igmp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\ip4.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\ip4_napt.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\ip4_addr.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv4\ip4_frag.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\dhcp6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\ethip6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\icmp6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\inet6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\ip6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\ip6_addr.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\ip6_frag.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\mld6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\core\ipv6\nd6.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ethernet.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\bridgeif.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\bridgeif_fdb.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\slipif.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\auth.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\ccp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\chap-md5.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\chap-new.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\chap_ms.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\demand.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\eap.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\ecp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\eui64.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\fsm.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\ipcp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\ipv6cp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\lcp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\magic.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\mppe.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\multilink.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\ppp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\pppapi.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\pppcrypt.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\pppoe.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\pppol2tp.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\pppos.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\upap.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\utils.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\lwip\src\netif\ppp\vj.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\hooks\tcp_isn_default.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\hooks\lwip_default_hooks.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\debug\lwip_debug.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\sockets_ext.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\freertos\sys_arch.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\port\esp32xx\vfs_lwip.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\apps\ping\esp_ping.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\apps\ping\ping.c.o
+Compiling .pioenvs\smartv2-satellite\lwip\apps\ping\ping_sock.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\esp_crt_bundle\esp_crt_bundle.c.o
+Compiling .pioenvs\smartv2-satellite\.pioenvs\smartv2-satellite\x509_crt_bundle.S.o
+Compiling .pioenvs\smartv2-satellite\components\mdns\mdns.c.o
+Compiling .pioenvs\smartv2-satellite\components\mdns\mdns_networking_lwip.c.o
+Compiling .pioenvs\smartv2-satellite\components\mdns\mdns_console.c.o
+Compiling .pioenvs\smartv2-satellite\mqtt\esp-mqtt\mqtt_client.c.o
+Compiling .pioenvs\smartv2-satellite\mqtt\esp-mqtt\lib\mqtt_msg.c.o
+Compiling .pioenvs\smartv2-satellite\mqtt\esp-mqtt\lib\mqtt_outbox.c.o
+Compiling .pioenvs\smartv2-satellite\mqtt\esp-mqtt\lib\platform_esp32_idf.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\abort.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\assert.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\heap.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\locks.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\libmbedtls.a
+Compiling .pioenvs\smartv2-satellite\newlib\poll.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\pthread.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\random.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\reent_init.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\lwip\liblwip.a
+Compiling .pioenvs\smartv2-satellite\newlib\newlib_init.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\syscalls.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\termios.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\stdatomic.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\time.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\sysconf.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\realpath.c.o
+Compiling .pioenvs\smartv2-satellite\newlib\port\esp_time_impl.c.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_api.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_cxx_api.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_item_hash_list.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_page.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_pagemanager.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_storage.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_handle_simple.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_handle_locked.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_partition.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_partition_lookup.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_partition_manager.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_types.cpp.o
+Compiling .pioenvs\smartv2-satellite\nvs_flash\src\nvs_platform.cpp.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\newlib\libnewlib.a
+Compiling .pioenvs\smartv2-satellite\perfmon\xtensa_perfmon_access.c.o
+Compiling .pioenvs\smartv2-satellite\perfmon\xtensa_perfmon_apis.c.o
+Compiling .pioenvs\smartv2-satellite\perfmon\xtensa_perfmon_masks.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mqtt\libmqtt.a
+Compiling .pioenvs\smartv2-satellite\protobuf-c\protobuf-c\protobuf-c\protobuf-c.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\common\protocomm.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\proto-c\constants.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\proto-c\sec0.pb-c.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\perfmon\libperfmon.a
+Compiling .pioenvs\smartv2-satellite\protocomm\proto-c\sec1.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\proto-c\sec2.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\proto-c\session.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\transports\protocomm_console.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\transports\protocomm_httpd.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\security\security0.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\security\security1.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\security\security2.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\crypto\srp6a\esp_srp.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\crypto\srp6a\esp_srp_mpi.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\simple_ble\simple_ble.c.o
+Compiling .pioenvs\smartv2-satellite\protocomm\src\transports\protocomm_ble.c.o
+Compiling .pioenvs\smartv2-satellite\pthread\pthread.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mdns\libmdns.a
+Compiling .pioenvs\smartv2-satellite\pthread\pthread_cond_var.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\protobuf-c\libprotobuf-c.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\nvs_flash\libnvs_flash.a
+Compiling .pioenvs\smartv2-satellite\pthread\pthread_local_storage.c.o
+Compiling .pioenvs\smartv2-satellite\pthread\pthread_rwlock.c.o
+Compiling .pioenvs\smartv2-satellite\pthread\pthread_semaphore.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_cmd.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_common.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_init.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_io.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_mmc.c.o
+Compiling .pioenvs\smartv2-satellite\sdmmc\sdmmc_sd.c.o
+Compiling .pioenvs\smartv2-satellite\soc\lldesc.c.o
+Compiling .pioenvs\smartv2-satellite\soc\dport_access_common.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\interrupts.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\gpio_periph.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\pthread\libpthread.a
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\uart_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\adc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\dedic_gpio_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\gdma_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\spi_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\ledc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\pcnt_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\rmt_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\sdm_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\i2s_periph.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\protocomm\libprotocomm.a
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\i2c_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\temperature_sensor_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\timer_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\lcd_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\mcpwm_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\sdmmc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\touch_sensor_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\twai_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\usb_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\usb_dwc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\soc\esp32s3\rtc_io_periph.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\flash_brownout_hook.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\esp32s3\spi_flash_oct_flash_init.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_hpm_enable.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\sdmmc\libsdmmc.a
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_drivers.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_generic.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_issi.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_mxic.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_gd.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_winbond.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_boya.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_mxic_opi.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_chip_th.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\memspi_host_driver.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\cache_utils.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\soc\libsoc.a
+Compiling .pioenvs\smartv2-satellite\spi_flash\flash_mmap.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\flash_ops.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_wrap.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\esp_flash_api.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\esp_flash_spi_init.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_os_func_app.c.o
+Compiling .pioenvs\smartv2-satellite\spi_flash\spi_flash_os_func_noos.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs_api.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs\src\spiffs_cache.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs\src\spiffs_check.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs\src\spiffs_gc.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs\src\spiffs_hydrogen.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\spiffs\src\spiffs_nucleus.c.o
+Compiling .pioenvs\smartv2-satellite\spiffs\esp_spiffs.c.o
+Compiling .pioenvs\smartv2-satellite\tcp_transport\transport.c.o
+Compiling .pioenvs\smartv2-satellite\tcp_transport\transport_ssl.c.o
+Compiling .pioenvs\smartv2-satellite\tcp_transport\transport_internal.c.o
+Compiling .pioenvs\smartv2-satellite\tcp_transport\transport_socks_proxy.c.o
+Compiling .pioenvs\smartv2-satellite\tcp_transport\transport_ws.c.o
+Compiling .pioenvs\smartv2-satellite\touch_element\touch_element.c.o
+Compiling .pioenvs\smartv2-satellite\touch_element\touch_button.c.o
+Compiling .pioenvs\smartv2-satellite\touch_element\touch_slider.c.o
+Compiling .pioenvs\smartv2-satellite\touch_element\touch_matrix.c.o
+Compiling .pioenvs\smartv2-satellite\ulp\ulp_common\ulp_common.c.o
+Compiling .pioenvs\smartv2-satellite\ulp\ulp_common\ulp_adc.c.o
+Compiling .pioenvs\smartv2-satellite\unity\unity\src\unity.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\spi_flash\libspi_flash.a
+Compiling .pioenvs\smartv2-satellite\unity\unity_runner.c.o
+Compiling .pioenvs\smartv2-satellite\unity\unity_utils_freertos.c.o
+Compiling .pioenvs\smartv2-satellite\unity\unity_utils_cache.c.o
+Compiling .pioenvs\smartv2-satellite\unity\unity_utils_memory.c.o
+Compiling .pioenvs\smartv2-satellite\unity\unity_port_esp32.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\spiffs\libspiffs.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\ulp\libulp.a
+Compiling .pioenvs\smartv2-satellite\unity\port\esp\unity_utils_memory_esp.c.o
+Compiling .pioenvs\smartv2-satellite\usb\hcd_dwc.c.o
+Compiling .pioenvs\smartv2-satellite\usb\hub.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\touch_element\libtouch_element.a
+Compiling .pioenvs\smartv2-satellite\usb\usb_helpers.c.o
+Compiling .pioenvs\smartv2-satellite\usb\usb_host.c.o
+Compiling .pioenvs\smartv2-satellite\usb\usb_private.c.o
+Compiling .pioenvs\smartv2-satellite\usb\usbh.c.o
+Compiling .pioenvs\smartv2-satellite\usb\usb_phy.c.o
+Compiling .pioenvs\smartv2-satellite\vfs\vfs.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\tcp_transport\libtcp_transport.a
+Compiling .pioenvs\smartv2-satellite\vfs\vfs_eventfd.c.o
+Compiling .pioenvs\smartv2-satellite\vfs\vfs_uart.c.o
+Compiling .pioenvs\smartv2-satellite\vfs\vfs_semihost.c.o
+Compiling .pioenvs\smartv2-satellite\vfs\vfs_console.c.o
+Compiling .pioenvs\smartv2-satellite\vfs\vfs_usb_serial_jtag.c.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\Partition.cpp.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\SPI_Flash.cpp.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\unity\libunity.a
+Compiling .pioenvs\smartv2-satellite\wear_levelling\WL_Ext_Perf.cpp.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\WL_Ext_Safe.cpp.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\WL_Flash.cpp.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\crc32.cpp.o
+Compiling .pioenvs\smartv2-satellite\wear_levelling\wear_levelling.cpp.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\wifi_config.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\wifi_scan.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\wifi_ctrl.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\manager.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\handlers.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\scheme_console.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\proto-c\wifi_config.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\proto-c\wifi_scan.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\proto-c\wifi_ctrl.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\proto-c\wifi_constants.pb-c.c.o
+Compiling .pioenvs\smartv2-satellite\wifi_provisioning\src\scheme_ble.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\vfs\libvfs.a
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\port\os_xtensa.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\usb\libusb.a
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\port\eloop.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\ap_config.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\ieee802_1x.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\wpa_auth.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\wear_levelling\libwear_levelling.a
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\wpa_auth_ie.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\pmksa_cache_auth.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\sta_info.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\ieee802_11.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\ap\comeback_token.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\common\sae.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\common\dragonfly.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\common\wpa_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\bitfield.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\aes-siv.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha256-kdf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\ccmp.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\aes-gcm.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\crypto_ops.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\wifi_provisioning\libwifi_provisioning.a
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\dh_group5.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\dh_groups.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\ms_funcs.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha1-tlsprf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha256-tlsprf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha384-tlsprf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha256-prf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha1-prf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha384-prf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\md4-internal.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\sha1-tprf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_common\eap_wsc_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\common\ieee802_11_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\chap.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_mschapv2.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_peap.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_peap_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_tls.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_tls_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_ttls.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\mschapv2.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_fast.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_fast_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\eap_peer\eap_fast_pac.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\rsn_supp\pmksa_cache.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\rsn_supp\wpa.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\rsn_supp\wpa_ie.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\base64.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\ext_password.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\uuid.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\wpabuf.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\wpa_debug.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\utils\json.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_attr_build.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_attr_parse.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_attr_process.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_dev_attr.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\wps\wps_enrollee.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\common\sae_pk.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_eap_client.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_wpa2_api_port.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_wpa_main.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_wpas_glue.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_common.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_wps.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_wpa3.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\esp_owe.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\tls_mbedtls.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\fastpbkdf2.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-bignum.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-rsa.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-ec.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\rc4.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\des-internal.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\aes-wrap.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\aes-unwrap.c.o
+Compiling .pioenvs\smartv2-satellite\wpa_supplicant\src\crypto\aes-ccm.c.o
+Compiling .pioenvs\smartv2-satellite\xtensa\eri.c.o
+Compiling .pioenvs\smartv2-satellite\xtensa\xt_trax.c.o
+Compiling .pioenvs\smartv2-satellite\xtensa\xtensa_intr.c.o
+Compiling .pioenvs\smartv2-satellite\xtensa\xtensa_intr_asm.S.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\3rdparty\everest\library\everest.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\3rdparty\everest\library\x25519.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\3rdparty\everest\library\Hacl_Curve25519_joined.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\aes.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\aesni.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\aesce.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\aria.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\asn1parse.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\asn1write.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\base64.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\bignum.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\xtensa\libxtensa.a
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\bignum_core.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\bignum_mod.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\bignum_mod_raw.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\block_cipher.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\camellia.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\mbedtls\3rdparty\everest\libeverest.a
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ccm.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\chacha20.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\wpa_supplicant\libwpa_supplicant.a
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\chachapoly.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\cipher.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\cipher_wrap.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\constant_time.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\cmac.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ctr_drbg.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\des.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\dhm.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecdh.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecdsa.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecjpake.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecp.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecp_curves.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ecp_curves_new.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\entropy.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\entropy_poll.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\error.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\gcm.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\hkdf.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\hmac_drbg.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\lmots.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\lms.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\md.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\md5.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\memory_buffer_alloc.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\nist_kw.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\oid.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\padlock.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pem.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pk.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pk_ecc.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pk_wrap.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pkcs12.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pkcs5.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pkparse.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pkwrite.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\platform.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\platform_util.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\poly1305.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_aead.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_cipher.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_client.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_driver_wrappers_no_static.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_ecp.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_ffdh.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_hash.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_mac.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_pake.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_rsa.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_se.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_slot_management.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_crypto_storage.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_its_file.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\psa_util.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ripemd160.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\rsa.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\rsa_alt_helpers.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\sha1.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\sha256.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\sha512.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\sha3.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\threading.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\timing.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\version.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\version_features.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\dma\esp_sha_gdma_impl.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\aes\dma\esp_aes_gdma_impl.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\crypto_shared_gdma\esp_crypto_shared_gdma.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_hardware.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_mem.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_timing.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\aes\esp_aes_xts.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\aes\esp_aes_common.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\aes\dma\esp_aes.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\esp_sha.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\dma\sha.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_ds\esp_rsa_sign_alt.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_bignum.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp32s3\bignum.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\dma\esp_sha1.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\dma\esp_sha256.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\sha\dma\esp_sha512.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\aes\esp_aes_gcm.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\md\esp_md.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\debug.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\mps_reader.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\mps_trace.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_cache.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_ciphersuites.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_client.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_cookie.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_debug_helpers_generated.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_msg.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_ticket.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls12_client.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls12_server.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls13_keys.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls13_server.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls13_client.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\ssl_tls13_generic.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\mbedtls_debug.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\mbedtls\library\libmbedcrypto.a
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\esp_platform_time.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\port\net_sockets.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\pkcs7.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509_create.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509_crl.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509_crt.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509_csr.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509write.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509write_crt.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\library\x509write_csr.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\3rdparty\p256-m\p256-m_driver_entrypoints.c.o
+Compiling .pioenvs\smartv2-satellite\mbedtls\mbedtls\3rdparty\p256-m\p256-m\p256-m.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\xtensa\eri.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\xtensa\xt_trax.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\main\bootloader_start.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_common.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_common_loader.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_clock_init.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_mem.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_random.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_random_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_efuse.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\flash_encrypt.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\mbedtls\library\libmbedtls.a
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\xtensa\libxtensa.a
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\secure_boot.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\main\libmain.a
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\mbedtls\3rdparty\p256-m\libp256m.a
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\bootloader_flash\src\bootloader_flash.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\bootloader_flash\src\flash_qio_mode.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\bootloader_flash\src\bootloader_flash_config_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_utility.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\flash_partitions.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\esp_image_format.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_init.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_clock_loader.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_console.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_console_loader.c.o
+Archiving .pioenvs\smartv2-satellite\esp-idf\mbedtls\mbedtls\library\libmbedx509.a
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\esp32s3\bootloader_sha.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\esp32s3\bootloader_soc.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\esp32s3\bootloader_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\bootloader_support\src\bootloader_panic.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\esp32s3\esp_efuse_table.c.o
+Generating project linker script .pioenvs\smartv2-satellite\sections.ld
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\esp32s3\esp_efuse_fields.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\esp32s3\esp_efuse_rtc_calib.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\esp32s3\esp_efuse_utility.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\src\esp_efuse_api.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\src\esp_efuse_fields.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\src\esp_efuse_utility.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\efuse\src\efuse_controller\keys\with_key_purposes\esp_efuse_api_key.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_app_format\esp_app_desc.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_common\src\esp_err_to_name.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\cpu.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\esp_cpu_intr.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\esp_memory_utils.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\cpu_region_protect.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\rtc_clk.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\rtc_clk_init.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\bootloader_support\libbootloader_support.a
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\rtc_init.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\esp_app_format\libesp_app_format.a
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\rtc_sleep.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\rtc_time.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_hw_support\port\esp32s3\chip_info.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\esp_common\libesp_common.a
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_crc.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_sys.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\efuse\libefuse.a
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_uart.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_spiflash.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_efuse.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_longjmp.S.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_systimer.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_wdt.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_cache_esp32s2_esp32s3.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_rom\patches\esp_rom_cache_writeback_esp32s3.S.o
+Compiling .pioenvs\smartv2-satellite\bootloader\esp_system\esp_err.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\hal\mpu_hal.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\hal\efuse_hal.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\hal\esp32s3\efuse_hal.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\hal\mmu_hal.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\hal\cache_hal.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\esp_hw_support\libesp_hw_support.a
+Compiling .pioenvs\smartv2-satellite\bootloader\log\log.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\log\log_buffers.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\log\log_noos.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\components\micro-ecc\uECC_verify_antifault.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\lldesc.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\dport_access_common.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\interrupts.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\gpio_periph.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\esp_rom\libesp_rom.a
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\uart_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\adc_periph.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\esp_system\libesp_system.a
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\dedic_gpio_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\gdma_periph.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\hal\libhal.a
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\spi_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\ledc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\pcnt_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\rmt_periph.c.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\log\liblog.a
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\sdm_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\i2s_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\i2c_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\temperature_sensor_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\timer_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\lcd_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\mcpwm_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\sdmmc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\touch_sensor_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\twai_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\usb_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\usb_dwc_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\soc\esp32s3\rtc_io_periph.c.o
+Compiling .pioenvs\smartv2-satellite\bootloader\spi_flash\spi_flash_wrap.c.o
+Generating partitions .pioenvs\smartv2-satellite\partitions.bin
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\micro-ecc\libmicro-ecc.a
+Generating an empty partition .pioenvs\smartv2-satellite\ota_data_initial.bin
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\fft.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\fft_util.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\filterbank.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\filterbank_util.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\frontend.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\frontend_util.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\kiss_fft.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\kiss_fftr.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\log_lut.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\log_scale.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\log_scale_util.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\noise_reduction.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\noise_reduction_util.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\soc\libsoc.a
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\pcan_gain_control.o
+Archiving .pioenvs\smartv2-satellite\bootloader\esp-idf\spi_flash\libspi_flash.a
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\pcan_gain_control_util.o
+Linking .pioenvs\smartv2-satellite\bootloader.elf
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\window.o
+Compiling .pioenvs\smartv2-satellite\lib0b8\ESPMicroSpeechFeatures\window_util.o
+Compiling .pioenvs\smartv2-satellite\lib32a\Improv\improv.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\decode\flac_decoder.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\decode\mp3_decoder.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\decode\wav_decoder.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_add_s16_ae32.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_add_s16_aes3.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_add_s16_ansi.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_biquad_f32_ae32.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_biquad_f32_aes3.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_biquad_f32_ansi.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_dotprod_f32_ae32.o
+Building .pioenvs\smartv2-satellite\bootloader.bin
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_dotprod_f32_aes3.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_dotprod_f32_ansi.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_dotprod_f32_m_ae32.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_mulc_s16_ae32.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\dsp\dsps_mulc_s16_ansi.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\quantization_utils.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\resample\art_biquad.o
+Creating esp32s3 image...
+Successfully created esp32s3 image.
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\resample\art_resampler.o
+Compiling .pioenvs\smartv2-satellite\lib5eb\esp-audio-libs\resample\resampler.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_aead\chacha20poly1305\sodium\aead_chacha20poly1305.o
+Archiving .pioenvs\smartv2-satellite\lib0b8\libESPMicroSpeechFeatures.a
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_core\ed25519\core_ed25519.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_core\ed25519\core_ristretto255.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_core\ed25519\ref10\ed25519_ref10.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_core\salsa\ref\core_salsa_ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\generichash_blake2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\blake2b-compress-avx2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\blake2b-compress-ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\blake2b-compress-sse41.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\blake2b-compress-ssse3.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\blake2b-ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_generichash\blake2b\ref\generichash_blake2b.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_hash\crypto_hash.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_hash\sha256\cp\hash_sha256_cp.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_hash\sha256\hash_sha256.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_hash\sha512\cp\hash_sha512_cp.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_hash\sha512\hash_sha512.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_onetimeauth\crypto_onetimeauth.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_onetimeauth\poly1305\donna\poly1305_donna.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_onetimeauth\poly1305\onetimeauth_poly1305.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-core.o
+Archiving .pioenvs\smartv2-satellite\lib32a\libImprov.a
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-encoding.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-fill-block-avx2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-fill-block-avx512f.o
+Archiving .pioenvs\smartv2-satellite\lib5eb\libesp-audio-libs.a
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-fill-block-ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2-fill-block-ssse3.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\argon2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\blake2b-long.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\pwhash_argon2i.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_pwhash\argon2\pwhash_argon2id.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_scalarmult\crypto_scalarmult.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_scalarmult\curve25519\ref10\x25519_ref10.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_scalarmult\curve25519\scalarmult_curve25519.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\crypto_sign.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\ed25519\ref10\keypair.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\ed25519\ref10\obsolete.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\ed25519\ref10\open.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\ed25519\ref10\sign.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_sign\ed25519\sign_ed25519.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\chacha20\ref\chacha20_ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\chacha20\stream_chacha20.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\crypto_stream.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\ref\salsa20_ref.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\stream_salsa20.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\xmm6\salsa20_xmm6-asm.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\xmm6\salsa20_xmm6.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-avx2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_stream\salsa20\xmm6int\salsa20_xmm6int-sse2.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\crypto_verify\sodium\verify.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\randombytes\internal\randombytes_internal_random.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\randombytes\randombytes.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\randombytes\sysrandom\randombytes_sysrandom.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\sodium\codecs.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\sodium\core.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\sodium\runtime.o
+Compiling .pioenvs\smartv2-satellite\lib89e\libsodium\sodium\utils.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\openssl\cipher-aesgcm.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\cipher-aesgcm.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\cipher-chachapoly.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\dh-curve25519.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\hash-blake2b.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\hash-blake2s.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\ref\hash-sha256.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\sodium\cipher-aesgcm.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\sodium\cipher-chachapoly.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\sodium\dh-curve25519.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\sodium\hash-blake2b.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\backend\sodium\hash-sha256.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\aes\rijndael-alg-fst.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\blake2\blake2b.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\blake2\blake2s.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\chacha\chacha.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\donna\curve25519-donna-c64.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\donna\curve25519-donna.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\donna\poly1305-donna.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\sha2\sha256.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\sha2\sha512.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\crypto\x25519\x25519.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\cipherstate.o
+Archiving .pioenvs\smartv2-satellite\lib89e\libsodium.a
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\dhstate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\errors.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\handshakestate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\hashstate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\internal.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\names.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\patterns.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\rand_os.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\rand_sodium.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\randstate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\signstate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\symmetricstate.o
+Compiling .pioenvs\smartv2-satellite\libc18\noise-c\protocol\util.o
+Archiving .pioenvs\smartv2-satellite\libc18\libnoise-c.a
+Linking .pioenvs\smartv2-satellite\firmware.elf
+RAM:   [=         ]  12.9% (used 42396 bytes from 327680 bytes)
+Flash: [========  ]  76.1% (used 2991349 bytes from 3932160 bytes)
+Building .pioenvs\smartv2-satellite\firmware.bin
+Creating esp32s3 image...
+Successfully created esp32s3 image.
+esp32_create_combined_bin([".pioenvs\smartv2-satellite\firmware.bin"], [".pioenvs\smartv2-satellite\firmware.elf"])
+Wrote 0x2ea660 bytes to file H:\source\SmartRespeakerv2\.esphome\build\smartv2-satellite\.pioenvs\smartv2-satellite/firmware.factory.bin, ready to flash to offset 0x0
+esp32_copy_ota_bin([".pioenvs\smartv2-satellite\firmware.bin"], [".pioenvs\smartv2-satellite\firmware.elf"])
+======================== [SUCCESS] Took 264.36 seconds ========================
+INFO Successfully compiled program.
+INFO Resolving IP address of smartv2-satellite.local in mDNS
+INFO Resolving IP address of smartv2-satellite.local
+ERROR Error resolving IP address of smartv2-satellite.local. Is it connected to WiFi?
+ERROR (If this error persists, please set a static IP address: https://esphome.io/components/wifi.html#manual-ips)
+ERROR Error resolving IP address: Error resolving address with mDNS: Did not respond. Maybe the device is offline., [Errno 11001] getaddrinfo failed
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Generating C++ source...
+INFO Updating https://github.com/espressif/esp-protocols.git@mdns-v1.5.1
+INFO Updating https://github.com/espressif/esp-tflite-micro@v1.3.1
+INFO Compiling app...
+Processing smartv2-satellite (board: esp32-s3-devkitc-1; framework: espidf; platform: https://github.com/pioarduino/platform-espressif32.git#51.03.07)
+--------------------------------------------------------------------------------
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+ - framework-espidf @ 3.50105.0 (5.1.5) 
+ - tool-cmake @ 3.21.3 
+ - tool-esptoolpy @ 4.8.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 11.2.0+20220823 
+ - tool-xtensa-esp-elf-gdb @ 11.2.0+20230208 
+ - toolchain-esp32ulp @ 2.35.0-20220830 
+ - toolchain-riscv32-esp @ 12.2.0+20230208 
+ - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
+Reading CMake configuration...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+|-- ESPMicroSpeechFeatures @ 1.1.0
+|-- Improv @ 1.2.4
+|-- esp-audio-libs @ 1.1.1
+|-- noise-c @ 0.1.6
+RAM:   [=         ]  12.9% (used 42396 bytes from 327680 bytes)
+Flash: [========  ]  76.1% (used 2991349 bytes from 3932160 bytes)
+========================= [SUCCESS] Took 7.41 seconds =========================
+INFO Successfully compiled program.
+INFO Resolving IP address of smartv2-satellite.local in mDNS
+INFO Resolving IP address of smartv2-satellite.local
+ERROR Error resolving IP address of smartv2-satellite.local. Is it connected to WiFi?
+ERROR (If this error persists, please set a static IP address: https://esphome.io/components/wifi.html#manual-ips)
+ERROR Error resolving IP address: Error resolving address with mDNS: Did not respond. Maybe the device is offline., [Errno 11001] getaddrinfo failed
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Generating C++ source...
+INFO Updating https://github.com/espressif/esp-protocols.git@mdns-v1.5.1
+INFO Updating https://github.com/espressif/esp-tflite-micro@v1.3.1
+INFO Compiling app...
+Processing smartv2-satellite (board: esp32-s3-devkitc-1; framework: espidf; platform: https://github.com/pioarduino/platform-espressif32.git#51.03.07)
+--------------------------------------------------------------------------------
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+ - framework-espidf @ 3.50105.0 (5.1.5) 
+ - tool-cmake @ 3.21.3 
+ - tool-esptoolpy @ 4.8.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 11.2.0+20220823 
+ - tool-xtensa-esp-elf-gdb @ 11.2.0+20230208 
+ - toolchain-esp32ulp @ 2.35.0-20220830 
+ - toolchain-riscv32-esp @ 12.2.0+20230208 
+ - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
+Reading CMake configuration...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+|-- ESPMicroSpeechFeatures @ 1.1.0
+|-- Improv @ 1.2.4
+|-- esp-audio-libs @ 1.1.1
+|-- noise-c @ 0.1.6
+RAM:   [=         ]  12.9% (used 42396 bytes from 327680 bytes)
+Flash: [========  ]  76.1% (used 2991349 bytes from 3932160 bytes)
+========================= [SUCCESS] Took 7.92 seconds =========================
+INFO Successfully compiled program.
+INFO Resolving IP address of smartv2-satellite.local in mDNS
+INFO Resolving IP address of smartv2-satellite.local
+INFO Connecting to 192.168.1.103 port 3232...
+INFO Connected to 192.168.1.103
+INFO Uploading H:\source\SmartRespeakerv2\.esphome\build\smartv2-satellite\.pioenvs\smartv2-satellite\firmware.bin (2991712 bytes)
+ERROR ESP requests password, but no password given!
