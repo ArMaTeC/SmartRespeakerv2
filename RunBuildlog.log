@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO ESPHome 2025.2.2
 INFO Reading configuration smartv2-factory.yaml...
 INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
@@ -3109,3 +3110,6 @@ INFO Connecting to 192.168.1.103 port 3232...
 INFO Connected to 192.168.1.103
 INFO Uploading H:\source\SmartRespeakerv2\.esphome\build\smartv2-satellite\.pioenvs\smartv2-satellite\firmware.bin (2991712 bytes)
 ERROR ESP requests password, but no password given!
+=======
+
+>>>>>>> 65fbc8f4ee80093ba0bf28fe22e729ff494b38d4
