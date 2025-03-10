@@ -584,3 +584,280 @@ esp32_improv: [source smartv2-factory.yaml:39]
   
   'authorizer' is a required option for [esp32_improv].
   {}
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+light.partition: [source common/smartv2-base.yaml:310]
+  platform: partition
+  id: voice_assistant_leds
+  internal: True
+  default_transition_length: 0ms
+  segments: 
+    - id: leds_internal
+      from: 0
+      
+      TO (31) must be less than the number of LEDs in light 'leds_internal' (16).
+      to: 31
+      reversed: True
+    - id: leds_internal
+      from: 32
+      to: 42
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+respeaker_lite: [source common/smartv2-base.yaml:996]
+  id: respeaker
+  reset_pin: 
+    number: 2
+    mode: 
+      output: True
+      input: False
+      open_drain: False
+      pullup: False
+      pulldown: False
+    inverted: False
+    ignore_pin_validation_error: False
+    ignore_strapping_warning: False
+    drive_strength: 20.0
+  mute_state: 
+    internal: True
+    id: mute_state
+    disabled_by_default: False
+    name: mute_state
+  firmware_version: 
+    icon: mdi:application-cog
+    name: XMOS firmware version
+    internal: False
+    id: firmware_version
+    disabled_by_default: False
+  firmware: 
+    url: |-
+      https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration/raw/refs/heads/main/respeaker_lite_i2s_dfu_firmware_48k_v1.1.0.bin
+    version: 1.1.0
+    md5: 9297155d1bf3eb21a9d4db52a89ea0c6
+    on_begin: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 0.5
+              green: 0.5
+              blue: 0.5
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Slow Pulse
+              state: True
+    on_end: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 0.0
+              green: 1.0
+              blue: 0.0
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Fast Pulse
+              state: True
+          - delay: 3s
+          - light.turn_off: 
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              state: False
+    on_error: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 1.0
+              green: 0.0
+              blue: 0.0
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Fast Pulse
+              state: True
+          - delay: 3s
+          - light.turn_off: 
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              state: False
+  address: 0x42
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+respeaker_lite: [source common/smartv2-base.yaml:996]
+  id: respeaker
+  reset_pin: 
+    number: 2
+    mode: 
+      output: True
+      input: False
+      open_drain: False
+      pullup: False
+      pulldown: False
+    inverted: False
+    ignore_pin_validation_error: False
+    ignore_strapping_warning: False
+    drive_strength: 20.0
+  mute_state: 
+    internal: True
+    id: mute_state
+    disabled_by_default: False
+    name: mute_state
+  firmware_version: 
+    icon: mdi:application-cog
+    name: XMOS firmware version
+    internal: False
+    id: firmware_version
+    disabled_by_default: False
+  firmware: 
+    url: |-
+      https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration/raw/refs/heads/main/respeaker_lite_i2s_dfu_firmware_48k_v1.1.0.bin
+    version: 1.1.0
+    md5: 9297155d1bf3eb21a9d4db52a89ea0c6
+    on_begin: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 0.5
+              green: 0.5
+              blue: 0.5
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Slow Pulse
+              state: True
+    on_end: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 0.0
+              green: 1.0
+              blue: 0.0
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Fast Pulse
+              state: True
+          - delay: 3s
+          - light.turn_off: 
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              state: False
+    on_error: 
+      - then: 
+          - light.turn_on: 
+              brightness: 0.5
+              red: 1.0
+              green: 0.0
+              blue: 0.0
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              effect: Fast Pulse
+              state: True
+          - delay: 3s
+          - light.turn_off: 
+              
+              Couldn't find ID 'led_respeaker_onboard'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "respeaker".
+              id: led_respeaker_onboard
+              state: False
+  address: 0x42
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+light.partition: [source common/smartv2-base.yaml:310]
+  platform: partition
+  id: voice_assistant_leds
+  internal: True
+  default_transition_length: 0ms
+  segments: 
+    - id: leds_internal
+      from: 1
+      to: 8
+      reversed: True
+    - id: leds_internal
+      from: 9
+      
+      TO (16) must be less than the number of LEDs in light 'leds_internal' (16).
+      to: 16
+      reversed: True
+  effects: 
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Generating C++ source...
+INFO Core config, version or integrations changed, cleaning build files...
+INFO Cloning https://github.com/espressif/esp-protocols.git@mdns-v1.5.1
+INFO Fetching mdns-v1.5.1
+INFO Cloning https://github.com/espressif/esp-tflite-micro@v1.3.1
+INFO Fetching v1.3.1
+INFO Compiling app...
+Processing smartv2-satellite (board: esp32-s3-devkitc-1; framework: espidf; platform: https://github.com/pioarduino/platform-espressif32.git#51.03.07)
+--------------------------------------------------------------------------------
+Library Manager: Installing bblanchon/ArduinoJson @ 6.18.5
+INFO Installing bblanchon/ArduinoJson @ 6.18.5
+Unpacking  [------------------------------------]    0%Unpacking  [------------------------------------]    1%Unpacking  [------------------------------------]    2%Unpacking  [#-----------------------------------]    3%Unpacking  [#-----------------------------------]    4%Unpacking  [##----------------------------------]    5%Unpacking  [##----------------------------------]    7%Unpacking  [##----------------------------------]    8%Unpacking  [###---------------------------------]    9%Unpacking  [###---------------------------------]   10%Unpacking  [####--------------------------------]   11%Unpacking  [####--------------------------------]   12%Unpacking  [#####-------------------------------]   14%Unpacking  [#####-------------------------------]   15%Unpacking  [#####-------------------------------]   16%Unpacking  [######------------------------------]   17%Unpacking  [######------------------------------]   18%Unpacking  [#######-----------------------------]   19%Unpacking  [#######-----------------------------]   21%Unpacking  [########----------------------------]   22%Unpacking  [########----------------------------]   23%Unpacking  [########----------------------------]   24%Unpacking  [#########---------------------------]   25%Unpacking  [#########---------------------------]   26%Unpacking  [##########--------------------------]   28%Unpacking  [##########--------------------------]   29%Unpacking  [##########--------------------------]   30%Unpacking  [###########-------------------------]   31%Unpacking  [###########-------------------------]   32%Unpacking  [############------------------------]   33%Unpacking  [############------------------------]   35%Unpacking  [#############-----------------------]   36%Unpacking  [#############-----------------------]   37%Unpacking  [#############-----------------------]   38%Unpacking  [##############----------------------]   39%Unpacking  [##############----------------------]   40%Unpacking  [###############---------------------]   42%Unpacking  [###############---------------------]   43%Unpacking  [################--------------------]   44%Unpacking  [################--------------------]   45%Unpacking  [################--------------------]   46%Unpacking  [#################-------------------]   47%Unpacking  [#################-------------------]   49%Unpacking  [##################------------------]   50%Unpacking  [##################------------------]   51%Unpacking  [##################------------------]   52%Unpacking  [###################-----------------]   53%Unpacking  [###################-----------------]   54%Unpacking  [####################----------------]   56%Unpacking  [####################----------------]   57%Unpacking  [#####################---------------]   58%Unpacking  [#####################---------------]   59%Unpacking  [#####################---------------]   60%Unpacking  [######################--------------]   61%Unpacking  [######################--------------]   63%Unpacking  [#######################-------------]   64%Unpacking  [#######################-------------]   65%Unpacking  [########################------------]   66%Unpacking  [########################------------]   67%Unpacking  [########################------------]   69%Unpacking  [#########################-----------]   70%Unpacking  [#########################-----------]   71%Unpacking  [##########################----------]   72%Unpacking  [##########################----------]   73%Unpacking  [##########################----------]   74%Unpacking  [###########################---------]   76%Unpacking  [###########################---------]   77%Unpacking  [############################--------]   78%Unpacking  [############################--------]   79%Unpacking  [#############################-------]   80%Unpacking  [#############################-------]   81%Unpacking  [#############################-------]   83%Unpacking  [##############################------]   84%Unpacking  [##############################------]   85%Unpacking  [###############################-----]   86%Unpacking  [###############################-----]   87%Unpacking  [################################----]   88%Unpacking  [################################----]   90%Unpacking  [################################----]   91%Unpacking  [#################################---]   92%Unpacking  [#################################---]   93%Unpacking  [##################################--]   94%Unpacking  [##################################--]   95%Unpacking  [##################################--]   97%Unpacking  [###################################-]   98%Unpacking  [###################################-]   99%Unpacking  [####################################]  100%
+Library Manager: ArduinoJson@6.18.5 has been installed!
+INFO ArduinoJson@6.18.5 has been installed!
+Library Manager: Installing kahrendt/ESPMicroSpeechFeatures @ 1.1.0
+INFO Installing kahrendt/ESPMicroSpeechFeatures @ 1.1.0
+Unpacking  [------------------------------------]    0%Unpacking  [------------------------------------]    2%Unpacking  [#-----------------------------------]    4%Unpacking  [##----------------------------------]    7%Unpacking  [###---------------------------------]    9%Unpacking  [####--------------------------------]   11%Unpacking  [#####-------------------------------]   14%Unpacking  [######------------------------------]   16%Unpacking  [######------------------------------]   19%Unpacking  [#######-----------------------------]   21%Unpacking  [########----------------------------]   23%Unpacking  [#########---------------------------]   26%Unpacking  [##########--------------------------]   28%Unpacking  [###########-------------------------]   30%Unpacking  [############------------------------]   33%Unpacking  [############------------------------]   35%Unpacking  [#############-----------------------]   38%Unpacking  [##############----------------------]   40%Unpacking  [###############---------------------]   42%Unpacking  [################--------------------]   45%Unpacking  [#################-------------------]   47%Unpacking  [##################------------------]   50%Unpacking  [##################------------------]   52%Unpacking  [###################-----------------]   54%Unpacking  [####################----------------]   57%Unpacking  [#####################---------------]   59%Unpacking  [######################--------------]   61%Unpacking  [#######################-------------]   64%Unpacking  [########################------------]   66%Unpacking  [########################------------]   69%Unpacking  [#########################-----------]   71%Unpacking  [##########################----------]   73%Unpacking  [###########################---------]   76%Unpacking  [############################--------]   78%Unpacking  [#############################-------]   80%Unpacking  [##############################------]   83%Unpacking  [##############################------]   85%Unpacking  [###############################-----]   88%Unpacking  [################################----]   90%Unpacking  [#################################---]   92%Unpacking  [##################################--]   95%Unpacking  [###################################-]   97%Unpacking  [####################################]  100%
+Library Manager: ESPMicroSpeechFeatures@1.1.0 has been installed!
+INFO ESPMicroSpeechFeatures@1.1.0 has been installed!
+Library Manager: Installing improv/Improv @ 1.2.4
+INFO Installing improv/Improv @ 1.2.4
+Downloading  [------------------------------------]    0%Downloading  [###############################-----]   88%Downloading  [####################################]  100%
+Unpacking  [------------------------------------]    0%Unpacking  [###---------------------------------]    9%Unpacking  [######------------------------------]   18%Unpacking  [#########---------------------------]   27%Unpacking  [#############-----------------------]   36%Unpacking  [################--------------------]   45%Unpacking  [###################-----------------]   54%Unpacking  [######################--------------]   63%Unpacking  [##########################----------]   72%Unpacking  [#############################-------]   81%Unpacking  [################################----]   90%Unpacking  [####################################]  100%
+Library Manager: Improv@1.2.4 has been installed!
+INFO Improv@1.2.4 has been installed!
+Library Manager: Installing esphome/esp-audio-libs @ 1.1.1
+INFO Installing esphome/esp-audio-libs @ 1.1.1
+Unpacking  [------------------------------------]    0%Unpacking  [#-----------------------------------]    2%Unpacking  [##----------------------------------]    5%Unpacking  [###---------------------------------]    8%Unpacking  [####--------------------------------]   11%Unpacking  [#####-------------------------------]   13%Unpacking  [######------------------------------]   16%Unpacking  [#######-----------------------------]   19%Unpacking  [########----------------------------]   22%Unpacking  [#########---------------------------]   25%Unpacking  [##########--------------------------]   27%Unpacking  [###########-------------------------]   30%Unpacking  [############------------------------]   33%Unpacking  [#############-----------------------]   36%Unpacking  [##############----------------------]   38%Unpacking  [###############---------------------]   41%Unpacking  [################--------------------]   44%Unpacking  [#################-------------------]   47%Unpacking  [##################------------------]   50%Unpacking  [###################-----------------]   52%Unpacking  [####################----------------]   55%Unpacking  [#####################---------------]   58%Unpacking  [######################--------------]   61%Unpacking  [#######################-------------]   63%Unpacking  [########################------------]   66%Unpacking  [#########################-----------]   69%Unpacking  [##########################----------]   72%Unpacking  [###########################---------]   75%Unpacking  [############################--------]   77%Unpacking  [#############################-------]   80%Unpacking  [##############################------]   83%Unpacking  [###############################-----]   86%Unpacking  [################################----]   88%Unpacking  [#################################---]   91%Unpacking  [##################################--]   94%Unpacking  [###################################-]   97%Unpacking  [####################################]  100%
+Library Manager: esp-audio-libs@1.1.1 has been installed!
+INFO esp-audio-libs@1.1.1 has been installed!
+Library Manager: Installing esphome/noise-c @ 0.1.6
+INFO Installing esphome/noise-c @ 0.1.6
+Unpacking  [------------------------------------]    0%Unpacking  [------------------------------------]    1%Unpacking  [------------------------------------]    2%Unpacking  [#-----------------------------------]    4%Unpacking  [#-----------------------------------]    5%Unpacking  [##----------------------------------]    6%Unpacking  [##----------------------------------]    8%Unpacking  [###---------------------------------]    9%Unpacking  [###---------------------------------]   10%Unpacking  [####--------------------------------]   12%Unpacking  [####--------------------------------]   13%Unpacking  [#####-------------------------------]   14%Unpacking  [#####-------------------------------]   16%Unpacking  [######------------------------------]   17%Unpacking  [######------------------------------]   18%Unpacking  [#######-----------------------------]   20%Unpacking  [#######-----------------------------]   21%Unpacking  [########----------------------------]   22%Unpacking  [########----------------------------]   24%Unpacking  [#########---------------------------]   25%Unpacking  [#########---------------------------]   27%Unpacking  [##########--------------------------]   28%Unpacking  [##########--------------------------]   29%Unpacking  [###########-------------------------]   31%Unpacking  [###########-------------------------]   32%Unpacking  [############------------------------]   33%Unpacking  [############------------------------]   35%Unpacking  [#############-----------------------]   36%Unpacking  [#############-----------------------]   37%Unpacking  [##############----------------------]   39%Unpacking  [##############----------------------]   40%Unpacking  [###############---------------------]   41%Unpacking  [###############---------------------]   43%Unpacking  [################--------------------]   44%Unpacking  [################--------------------]   45%Unpacking  [#################-------------------]   47%Unpacking  [#################-------------------]   48%Unpacking  [##################------------------]   50%Unpacking  [##################------------------]   51%Unpacking  [##################------------------]   52%Unpacking  [###################-----------------]   54%Unpacking  [###################-----------------]   55%Unpacking  [####################----------------]   56%Unpacking  [####################----------------]   58%Unpacking  [#####################---------------]   59%Unpacking  [#####################---------------]   60%Unpacking  [######################--------------]   62%Unpacking  [######################--------------]   63%Unpacking  [#######################-------------]   64%Unpacking  [#######################-------------]   66%Unpacking  [########################------------]   67%Unpacking  [########################------------]   68%Unpacking  [#########################-----------]   70%Unpacking  [#########################-----------]   71%Unpacking  [##########################----------]   72%Unpacking  [##########################----------]   74%Unpacking  [###########################---------]   75%Unpacking  [###########################---------]   77%Unpacking  [############################--------]   78%Unpacking  [############################--------]   79%Unpacking  [#############################-------]   81%Unpacking  [#############################-------]   82%Unpacking  [##############################------]   83%Unpacking  [##############################------]   85%Unpacking  [###############################-----]   86%Unpacking  [###############################-----]   87%Unpacking  [################################----]   89%Unpacking  [################################----]   90%Unpacking  [#################################---]   91%Unpacking  [#################################---]   93%Unpacking  [##################################--]   94%Unpacking  [##################################--]   95%Unpacking  [###################################-]   97%Unpacking  [###################################-]   98%Unpacking  [####################################]  100%
+Library Manager: noise-c@0.1.6 has been installed!
+INFO noise-c@0.1.6 has been installed!
+Library Manager: Resolving dependencies...
+INFO Resolving dependencies...
+Library Manager: Installing esphome/libsodium @ 1.10018.4
+INFO Installing esphome/libsodium @ 1.10018.4
+Unpacking  [------------------------------------]    0%Unpacking  [------------------------------------]    1%Unpacking  [------------------------------------]    2%Unpacking  [#-----------------------------------]    3%Unpacking  [#-----------------------------------]    4%Unpacking  [##----------------------------------]    5%Unpacking  [##----------------------------------]    7%Unpacking  [##----------------------------------]    8%Unpacking  [###---------------------------------]    9%Unpacking  [###---------------------------------]   10%Unpacking  [####--------------------------------]   11%Unpacking  [####--------------------------------]   13%Unpacking  [#####-------------------------------]   14%Unpacking  [#####-------------------------------]   15%Unpacking  [#####-------------------------------]   16%Unpacking  [######------------------------------]   17%Unpacking  [######------------------------------]   18%Unpacking  [#######-----------------------------]   20%Unpacking  [#######-----------------------------]   21%Unpacking  [########----------------------------]   22%Unpacking  [########----------------------------]   23%Unpacking  [########----------------------------]   24%Unpacking  [#########---------------------------]   26%Unpacking  [#########---------------------------]   27%Unpacking  [##########--------------------------]   28%Unpacking  [##########--------------------------]   29%Unpacking  [###########-------------------------]   30%Unpacking  [###########-------------------------]   32%Unpacking  [###########-------------------------]   33%Unpacking  [############------------------------]   34%Unpacking  [############------------------------]   35%Unpacking  [#############-----------------------]   36%Unpacking  [#############-----------------------]   37%Unpacking  [##############----------------------]   39%Unpacking  [##############----------------------]   40%Unpacking  [##############----------------------]   41%Unpacking  [###############---------------------]   42%Unpacking  [###############---------------------]   43%Unpacking  [################--------------------]   45%Unpacking  [################--------------------]   46%Unpacking  [#################-------------------]   47%Unpacking  [#################-------------------]   48%Unpacking  [#################-------------------]   49%Unpacking  [##################------------------]   50%Unpacking  [##################------------------]   52%Unpacking  [###################-----------------]   53%Unpacking  [###################-----------------]   54%Unpacking  [####################----------------]   55%Unpacking  [####################----------------]   56%Unpacking  [####################----------------]   58%Unpacking  [#####################---------------]   59%Unpacking  [#####################---------------]   60%Unpacking  [######################--------------]   61%Unpacking  [######################--------------]   62%Unpacking  [#######################-------------]   64%Unpacking  [#######################-------------]   65%Unpacking  [#######################-------------]   66%Unpacking  [########################------------]   67%Unpacking  [########################------------]   68%Unpacking  [#########################-----------]   69%Unpacking  [#########################-----------]   71%Unpacking  [##########################----------]   72%Unpacking  [##########################----------]   73%Unpacking  [##########################----------]   74%Unpacking  [###########################---------]   75%Unpacking  [###########################---------]   77%Unpacking  [############################--------]   78%Unpacking  [############################--------]   79%Unpacking  [#############################-------]   80%Unpacking  [#############################-------]   81%Unpacking  [#############################-------]   83%Unpacking  [##############################------]   84%Unpacking  [##############################------]   85%Unpacking  [###############################-----]   86%Unpacking  [###############################-----]   87%Unpacking  [################################----]   88%Unpacking  [################################----]   90%Unpacking  [################################----]   91%Unpacking  [#################################---]   92%Unpacking  [#################################---]   93%Unpacking  [##################################--]   94%Unpacking  [##################################--]   96%Unpacking  [###################################-]   97%Unpacking  [###################################-]   98%Unpacking  [###################################-]   99%Unpacking  [####################################]  100%
+Library Manager: libsodium@1.10018.4 has been installed!
+INFO libsodium@1.10018.4 has been installed!
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+ - framework-espidf @ 3.50105.0 (5.1.5) 
+ - tool-cmake @ 3.21.3 
+ - tool-esptoolpy @ 4.8.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 11.2.0+20220823 
+ - tool-xtensa-esp-elf-gdb @ 11.2.0+20230208 
+ - toolchain-esp32ulp @ 2.35.0-20220830 
+ - toolchain-riscv32-esp @ 12.2.0+20230208 
+ - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
+Reading CMake configuration...
