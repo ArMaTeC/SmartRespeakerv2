@@ -19,10 +19,10 @@ substitutions:
 
 esphome:
   project: 
-    name: formatbce.Koala Satellite
+    name: armatec.smartv2 Satellite
     version: 2025.2.2
-  name: koala-satellite
-  friendly_name: Koala Satellite
+  name: smartv2-satellite
+  friendly_name: smartv2 Satellite
   name_add_mac_suffix: true
   min_version: 2025.2.0
   on_boot:
@@ -49,7 +49,7 @@ esphome:
 esp32:
   board: esp32-s3-devkitc-1
   variant: esp32s3
-  flash_size: 16MB
+  flash_size: 8MB
   framework:
     type: esp-idf
     version: recommended
@@ -88,6 +88,8 @@ select:
     disabled_by_default: true
 
 api:
+  encryption:
+    key: "ZCgwWwJTbF0/EQpyOkSOl+nYyghZdE9n5tRAoEMnWDk="
   id: api_id
   actions:
     - action: start_va
@@ -288,222 +290,19 @@ switch:
       - switch.turn_off: timer_ringing
 
 binary_sensor:
-  # User Button. Used for many things (See on_multi_click)
-  - platform: gpio
-    id: user_button
-    pin:
-      number: GPIO42
-      inverted: true
-    name: "User button"
-    on_press:
-      - script.execute: control_leds
-    on_release:
-      - script.execute: control_leds
-      # If a factory reset is requested, factory reset on release
-      - if:
-          condition:
-            lambda: return id(factory_reset_requested);
-          then:
-            - button.press: factory_reset_button
-    on_multi_click:
-      # Simple Click:
-      #   - Abort "things" in order
-      #     - Timer
-      #     - Announcements
-      #     - Voice Assistant Pipeline run
-      #     - Music
-      #   - Starts the voice assistant if it is not yet running and if the device is not muted.
-      - timing:
-          - ON for at most 1s
-          - OFF for at least 0.25s
-        then:
-          - if:
-              condition:
-                lambda: return !id(init_in_progress) && !id(color_changed);
-              then:
-                - if:
-                    condition:
-                      switch.is_on: timer_ringing
-                    then:
-                      - switch.turn_off: timer_ringing
-                    else:
-                      - if:
-                          condition:
-                            media_player.is_announcing:
-                          then:
-                            media_player.stop:
-                              announcement: true
-                          else:
-                            - if:
-                                condition:
-                                  voice_assistant.is_running:
-                                then:
-                                  - voice_assistant.stop:
-                                else:
-                                  - if:
-                                      condition:
-                                        media_player.is_playing:
-                                      then:
-                                        - media_player.pause:
-                                      else:
-                                        - if:
-                                            condition:
-                                              and:
-                                                - switch.is_off: mic_mute_switch
-                                                - not:
-                                                    voice_assistant.is_running
-                                            then:
-                                              - if:
-                                                  condition:
-                                                    switch.is_on: button_sound
-                                                  then:
-                                                    - script.execute:
-                                                        id: play_sound
-                                                        priority: true
-                                                        sound_file: !lambda return id(center_button_press_sound);
-                                                    - delay: 300ms
-                                              - voice_assistant.start:
-      # Double Click
-      #  . Exposed as an event entity. To be used in automations inside Home Assistant
-      - timing:
-          - ON for at most 1s
-          - OFF for at most 0.25s
-          - ON for at most 1s
-          - OFF for at least 0.25s
-        then:
-          - if:
-              condition:
-                lambda: return !id(init_in_progress) && !id(color_changed);
-              then:
-                - if:
-                    condition:
-                      switch.is_on: button_sound
-                    then:
-                      - script.execute:
-                          id: play_sound
-                          priority: false
-                          sound_file: !lambda return id(center_button_double_press_sound);
-                - event.trigger:
-                    id: button_press_event
-                    event_type: "double_press"
-      # Triple Click
-      #  . Exposed as an event entity. To be used in automations inside Home Assistant
-      - timing:
-          - ON for at most 1s
-          - OFF for at most 0.25s
-          - ON for at most 1s
-          - OFF for at most 0.25s
-          - ON for at most 1s
-          - OFF for at least 0.25s
-        then:
-          - if:
-              condition:
-                lambda: return !id(init_in_progress) && !id(color_changed);
-              then:
-                - if:
-                    condition:
-                      switch.is_on: button_sound
-                    then:
-                      - script.execute:
-                          id: play_sound
-                          priority: false
-                          sound_file: !lambda return id(center_button_triple_press_sound);
-                - event.trigger:
-                    id: button_press_event
-                    event_type: "triple_press"
-      # Long Press
-      #  . Exposed as an event entity. To be used in automations inside Home Assistant
-      - timing:
-          - ON for at least 1s
-        then:
-          - if:
-              condition:
-                lambda: return !id(init_in_progress) && !id(color_changed);
-              then:
-                - if:
-                    condition:
-                      switch.is_on: button_sound
-                    then:
-                      - script.execute:
-                          id: play_sound
-                          priority: false
-                          sound_file: !lambda return id(center_button_long_press_sound);
-                - light.turn_off: voice_assistant_leds
-                - event.trigger:
-                    id: button_press_event
-                    event_type: "long_press"
-      # Factory Reset Warning
-      #  . Audible and Visible warning.
-      - timing:
-          - ON for at least 10s
-        then:
-          - if:
-              condition:
-                lambda: return !id(dial_touched);
-              then:
-                - light.turn_on:
-                    brightness: 100%
-                    id: voice_assistant_leds
-                    effect: "Factory Reset Coming Up"
-                - script.execute:
-                    id: play_sound
-                    priority: true
-                    sound_file: !lambda return id(factory_reset_initiated_sound);
-                - wait_until:
-                    binary_sensor.is_off: user_button
-                - if:
-                    condition:
-                      lambda: return !id(factory_reset_requested);
-                    then:
-                      - light.turn_off: voice_assistant_leds
-                      - script.execute:
-                          id: play_sound
-                          priority: true
-                          sound_file: !lambda return id(factory_reset_cancelled_sound);
-      # Factory Reset Confirmed.
-      #  . Audible warning to prompt user to release the button
-      #  . Set factory_reset_requested to true
-      - timing:
-          - ON for at least 22s
-        then:
-          - if:
-              condition:
-                lambda: return !id(dial_touched);
-              then:
-                - script.execute:
-                    id: play_sound
-                    priority: true
-                    sound_file: !lambda return id(factory_reset_confirmed_sound);
-                - light.turn_on:
-                    brightness: 100%
-                    red: 100%
-                    green: 0%
-                    blue: 0%
-                    id: voice_assistant_leds
-                    effect: "none"
-                - lambda: id(factory_reset_requested) = true;
-
-  - platform: gpio
-  # this thing is pretty flaky, giving several on/off commands at once. Do not use it for serious stuff
-    id: rotary_button
-    disabled_by_default: true
-    pin:
-      number: GPIO20
-      inverted: true
-      mode:
-        input: true
-        pullup: true
 
 light:
   # Hardware LED ring. Not used because remapping needed
   - platform: esp32_rmt_led_strip
     id: leds_internal
-    pin: GPIO13
-    chipset: WS2812
-    max_refresh_rate: 15ms
-    num_leds: 43
+    disabled_by_default: true
+    internal: false
     rgb_order: GRB
-    rmt_symbols: 96
+    pin: GPIO1
+    num_leds: 16
+    rmt_symbols: 192
+    chipset: ws2812
+    max_refresh_rate: 15ms
     default_transition_length: 0ms
 
   # Voice Assistant LED ring. Remapping of the internal LED.
@@ -1598,6 +1397,10 @@ button:
     entity_category: config
     disabled_by_default: true
     icon: "mdi:restart"
+  - platform: template
+    name: "Manual VA Trigger"
+    on_press:
+      - voice_assistant.start:
 
 debug:
   update_interval: 5s
