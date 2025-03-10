@@ -1,0 +1,553 @@
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+sensor.rotary_encoder: [source common/smartv2-base.yaml:576]
+  platform: rotary_encoder
+  id: dial
+  pin_a: 
+    number: 47
+    mode: 
+      input: True
+      output: False
+      open_drain: False
+      pullup: False
+      pulldown: False
+    inverted: False
+    ignore_pin_validation_error: False
+    ignore_strapping_warning: False
+    drive_strength: 20.0
+  pin_b: 
+    number: 21
+    mode: 
+      input: True
+      output: False
+      open_drain: False
+      pullup: False
+      pulldown: False
+    inverted: False
+    ignore_pin_validation_error: False
+    ignore_strapping_warning: False
+    drive_strength: 20.0
+  resolution: 2
+  on_clockwise: 
+    - then: 
+        - lambda: !lambda |-
+            id(dial_touched) = true;
+        - if: 
+            condition: 
+              binary_sensor.is_off: 
+                
+                Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+                id: user_button
+            then: 
+              - script.execute: 
+                  id: control_volume
+                  increase_volume: True
+            else: 
+              - script.execute: 
+                  id: control_hue
+                  increase_hue: True
+  on_anticlockwise: 
+    - then: 
+        - lambda: !lambda |-
+            id(dial_touched) = true;
+        - if: 
+            condition: 
+              binary_sensor.is_off: 
+                
+                Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+                id: user_button
+            then: 
+              - script.execute: 
+script: [source common/smartv2-base.yaml:640]
+  - id: control_leds
+    then: 
+      - 
+        Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+        lambda: !lambda |-
+          id(check_if_timers_active).execute();
+          if (id(is_timer_active)){
+            id(fetch_first_active_timer).execute();
+          }
+          if (id(improv_ble_in_progress)) {
+            id(control_leds_improv_ble_state).execute();
+          } else if (id(init_in_progress)) {
+            id(control_leds_init_state).execute();
+          } else if (!id(wifi_id).is_connected() || !id(api_id).is_connected()){
+            id(control_leds_no_ha_connection_state).execute();
+          } else if (id(user_button).state) {
+            id(control_leds_center_button_touched).execute();
+          } else if (id(dial_touched)) {
+            id(control_leds_volume_changed).execute();
+          } else if (id(timer_ringing).state) {
+            id(control_leds_timer_ringing).execute();
+          } else if (id(voice_assistant_phase) == 2) {
+            id(control_leds_voice_assistant_waiting_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 3) {
+            id(control_leds_voice_assistant_listening_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 4) {
+            id(control_leds_voice_assistant_thinking_phase).execute();
+          } else if (id(voice_assistant_phase) == 5) {
+            id(control_leds_voice_assistant_replying_phase).execute();
+          } else if (id(voice_assistant_phase) == 11) {
+            id(control_leds_voice_assistant_error_phase).execute();
+          } else if (id(voice_assistant_phase) == 10) {
+            id(control_leds_voice_assistant_not_ready_phase).execute();
+          } else if (id(is_timer_active)) {
+            id(control_leds_timer_ticking).execute();
+          } else if (id(voice_assistant_phase) == 1) {
+            id(control_leds_voice_assistant_idle_phase).execute();
+          }
+    mode: single
+    parameters: {}
+  - id: control_leds_improv_ble_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.89
+          blue: 0.71
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_init_state
+    then: 
+      - if: 
+          condition: 
+            wifi.connected: {}
+          then: 
+            - light.turn_on: 
+                brightness: 0.5
+                red: 0.094
+                green: 0.733
+                blue: 0.9490000000000001
+                id: voice_assistant_leds
+                effect: Twinkle
+                state: True
+          else: 
+            - light.turn_on: 
+                id: voice_assistant_leds
+                effect: Rainbow
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_no_ha_connection_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_idle_phase
+    then: 
+      - light.turn_off: 
+          id: voice_assistant_leds
+          state: False
+      - if: 
+          condition: 
+            light.is_on: 
+              id: led_ring
+          then: 
+            - light.turn_on: 
+                id: led_ring
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_waiting_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Waiting for Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_listening_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Listening For Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_thinking_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Thinking
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_replying_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Replying
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_error_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Error
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_not_ready_phase
+    then: 
+      - light.turn_on: 
+          brightness: 0.66
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_volume_changed
+    mode: restart
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Volume Display
+          state: True
+      - delay: 2s
+      - script.execute: 
+          id: control_leds
+    parameters: {}
+  - id: control_leds_center_button_touched
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Center Button Touched
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ringing
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Timer Ring
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ticking
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Timer tick
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_volume
+    mode: restart
+    parameters: 
+      increase_volume: bool
+    then: 
+      - delay: 16ms
+      - if: 
+          condition: 
+            lambda: !lambda |-
+              return increase_volume;
+          then: 
+            - media_player.volume_up: 
+                announcement: False
+          else: 
+            - media_player.volume_down: 
+                announcement: False
+      - script.execute: 
+          id: control_leds
+      - delay: 1s
+      - lambda: !lambda |-
+          id(dial_touched) = false;
+      - sensor.rotary_encoder.set_value: 
+          id: dial
+          value: 0
+      - script.execute: 
+          id: control_leds
+  - id: control_hue
+    mode: restart
+    parameters: 
+      increase_hue: bool
+    then: 
+      - delay: 16ms
+      - if: 
+          condition: 
+            lambda: !lambda |-
+              return(abs(int(id(dial).state)) > 3 || id(color_changed));
+          then: 
+            - lambda: !lambda |-
+                id(color_changed) = true;
+                auto light_color = id(voice_assistant_leds).current_values;
+                int hue = 0;
+                float saturation = 0;
+                float value = 0;
+                rgb_to_hsv( light_color.get_red(),
+                            light_color.get_green(),
+                            light_color.get_blue(),
+                            hue,
+                            saturation,
+                            value);
+                if (increase_hue) {
+                  hue = (hue + 10) % 360;
+                } else {
+                  hue = (hue + 350) % 360;
+                }
+                if (saturation < 0.05) {
+                  saturation = 1;
+                }
+                float red = 0;
+                float green = 0;
+                float blue = 0;
+                hsv_to_rgb( hue,
+                            saturation,
+                            value,
+                            red,
+                            green,
+                            blue);
+                id(voice_assistant_leds).make_call().set_rgb(red, green, blue).perform();
+      - script.execute: 
+          id: control_leds
+      - wait_until: 
+          condition: 
+            binary_sensor.is_off: 
+              
+              Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+              id: user_button
+      - lambda: !lambda |-
+          id(dial_touched) = false;
+esp32_improv: [source smartv2-factory.yaml:39]
+  
+  Couldn't find ID 'user_button'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "restart_button".
+  authorizer: user_button
+  on_start: 
+    - then: 
+        - lambda: !lambda |-
+            id(improv_ble_in_progress) = true;
+        - script.execute: 
+            id: control_leds
+  on_provisioned: 
+    - then: 
+        - lambda: !lambda |-
+            id(improv_ble_in_progress) = false;
+        - script.execute: 
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Cloning https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Fetching dev
+INFO Cloning https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Fetching 48kHz_mic_support
+INFO Cloning https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Fetching main
+Failed config
+
+script: [source common/smartv2-base.yaml:612]
+  - id: control_leds
+    then: 
+      - lambda: |-
+          id(check_if_timers_active).execute();
+          if (id(is_timer_active)){
+            id(fetch_first_active_timer).execute();
+          }
+          if (id(improv_ble_in_progress)) {
+            id(control_leds_improv_ble_state).execute();
+          } else if (id(init_in_progress)) {
+            id(control_leds_init_state).execute();
+          } else if (!id(wifi_id).is_connected() || !id(api_id).is_connected()){
+            id(control_leds_no_ha_connection_state).execute();
+          } else if (id(dial_touched)) {
+            id(control_leds_volume_changed).execute();
+          } else if (id(timer_ringing).state) {
+            id(control_leds_timer_ringing).execute();
+          } else if (id(voice_assistant_phase) == 2) {
+            id(control_leds_voice_assistant_waiting_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 3) {
+            id(control_leds_voice_assistant_listening_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 4) {
+            id(control_leds_voice_assistant_thinking_phase).execute();
+          } else if (id(voice_assistant_phase) == 5) {
+            id(control_leds_voice_assistant_replying_phase).execute();
+          } else if (id(voice_assistant_phase) == 11) {
+            id(control_leds_voice_assistant_error_phase).execute();
+          } else if (id(voice_assistant_phase) == 10) {
+            id(control_leds_voice_assistant_not_ready_phase).execute();
+          } else if (id(is_timer_active)) {
+            id(control_leds_timer_ticking).execute();
+          } else if (id(voice_assistant_phase) == 1) {
+            id(control_leds_voice_assistant_idle_phase).execute();
+          }
+  - id: control_leds_improv_ble_state
+    then: 
+      - light.turn_on: 
+          brightness: 50%
+          red: 100%
+          green: 89%
+          blue: 71%
+          id: voice_assistant_leds
+          effect: Twinkle
+  - id: control_leds_init_state
+    then: 
+      - if: 
+          condition: 
+            wifi.connected: {}
+          then: 
+            - light.turn_on: 
+                brightness: 50%
+                red: 9.4%
+                green: 73.3%
+                blue: 94.9%
+                id: voice_assistant_leds
+                effect: Twinkle
+          else: 
+            - light.turn_on: 
+                id: voice_assistant_leds
+                effect: Rainbow
+  - id: control_leds_no_ha_connection_state
+    then: 
+      - light.turn_on: 
+          brightness: 50%
+          red: 1
+          green: 0
+          blue: 0
+          id: voice_assistant_leds
+          effect: Twinkle
+  - id: control_leds_voice_assistant_idle_phase
+    then: 
+      - light.turn_off: voice_assistant_leds
+      - if: 
+          condition: 
+            light.is_on: led_ring
+          then: 
+            light.turn_on: led_ring
+  - id: control_leds_voice_assistant_waiting_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Waiting for Command
+  - id: control_leds_voice_assistant_listening_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Listening For Command
+  - id: control_leds_voice_assistant_thinking_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Thinking
+  - id: control_leds_voice_assistant_replying_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Replying
+  - id: control_leds_voice_assistant_error_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          red: 1
+          green: 0
+          blue: 0
+          id: voice_assistant_leds
+          effect: Error
+  - id: control_leds_voice_assistant_not_ready_phase
+    then: 
+      - light.turn_on: 
+          brightness: 66%
+          red: 1
+          green: 0
+          blue: 0
+          id: voice_assistant_leds
+          effect: Twinkle
+  - id: control_leds_volume_changed
+    mode: restart
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Volume Display
+      - delay: 2s
+      - script.execute: control_leds
+  - id: control_leds_center_button_touched
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Center Button Touched
+  - id: control_leds_timer_ringing
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Timer Ring
+  - id: control_leds_timer_ticking
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Timer tick
+  - id: control_volume
+    mode: restart
+    parameters: 
+      increase_volume: bool
+    then: 
+      - delay: 16ms
+      - if: 
+          condition: 
+            lambda: return increase_volume;
+          then: 
+            - media_player.volume_up: {}
+          else: 
+            - media_player.volume_down: {}
+      - script.execute: control_leds
+      - delay: 1s
+      - lambda: id(dial_touched) = false;
+      - 
+        Unable to find action with the name 'sensor.rotary_encoder.set_value'.
+        sensor.rotary_encoder.set_value: 
+          id: dial
+          value: 0
