@@ -729,30 +729,84 @@ light:
           name: "Analog Clock Effect"
           update_interval: 100ms
           lambda: |-
-            #include <cmath>
-            static int total_leds = 16;
-            static Color base_color = Color(30, 30, 30);
-            auto now = id(time_id).now();
-            int hour = now.hour % 12;
-            int minute = now.minute;
-            int second = now.second;
-            int second_pos = (15 - (int)(round((float)second * 16 / 60.0f))) % 16;
-            int minute_pos = (15 - (int)(round((float)minute * 16 / 60.0f))) % 16;
-            int hour_pos = (15 - (int)(round((float)hour * 16 / 12.0f + (float)minute / 60.0f * (16 / 12.0f)))) % 16;
-            for (int i = 0; i < total_leds; i++) {
-              it[i] = base_color;
-            }
-            Color second_color = Color(255, 0, 0);
-            Color minute_color = Color(0, 255, 0);
-            Color hour_color = Color(0, 0, 255);
-            Color marker_color = Color(255, 255, 255);
-            it[0] = marker_color;
-            it[4] = marker_color;
-            it[8] = marker_color;
-            it[12] = marker_color;
-            it[hour_pos] = hour_color;
-            it[minute_pos] = minute_color;
-            it[second_pos] = second_color;
+              #include <cmath>
+              static int total_leds = 16;
+              static Color base_color = Color(30, 30, 30);
+              static int prev_second = -1;
+              static unsigned long pulse_start_time = 0;
+
+              // Get current time with milliseconds for smooth animation
+              auto now = id(time_id).now();
+              int hour = now.hour % 12;
+              int minute = now.minute;
+              int second = now.second;
+              int millisecond = millis() % 1000;
+
+              if (second != prev_second) {
+                pulse_start_time = millis();
+                prev_second = second;
+              }
+              float time_since_change = (millis() - pulse_start_time) / 1000.0f;
+              float fade_duration = 0.5f;
+              float pulse_factor = max(0.0f, 1.0f - time_since_change / fade_duration);
+
+              // Calculate smooth positions with fractional components
+              float second_float = second + (millisecond / 1000.0);
+              float minute_float = minute + (second_float / 60.0);
+              float hour_float = hour + (minute_float / 60.0);
+
+              int second_pos = (15 - (int)(round(second_float * 16 / 60.0))) % 16;
+              int minute_pos = (15 - (int)(round(minute_float * 16 / 60.0))) % 16;
+              int hour_pos = (15 - (int)(round(hour_float * 16 / 12.0))) % 16;
+
+              // Set all LEDs to dim base color
+              for (int i = 0; i < total_leds; i++) {
+                it[i] = base_color;
+              }
+
+              // Define hand colors
+              Color second_color = Color(255, 0, 0);
+              Color minute_color = Color(0, 255, 0);
+              Color hour_color = Color(0, 0, 255);
+
+              auto blend_colors = [](Color current, Color add_color, float ratio = 1.0) {
+                return Color(
+                  min(255, current.red + (int)(add_color.red * ratio)),
+                  min(255, current.green + (int)(add_color.green * ratio)),
+                  min(255, current.blue + (int)(add_color.blue * ratio))
+                );
+              };
+
+              // Pulse effect for markers
+              float pulse = 0.7 + 0.3 * sin(millis() / 1000.0 * 1.5);
+              Color marker_color = Color(180 * pulse, 180 * pulse, 180 * pulse);
+
+              it[0] = blend_colors(it[0].get(), marker_color);
+              it[4] = blend_colors(it[4].get(), marker_color);
+              it[8] = blend_colors(it[8].get(), marker_color);
+              it[12] = blend_colors(it[12].get(), marker_color);
+
+              // Hour hand with fading glow
+              it[hour_pos] = blend_colors(it[hour_pos].get(), hour_color);
+              it[(hour_pos + 1) % 16] = blend_colors(it[(hour_pos + 1) % 16].get(), hour_color, 0.3 * pulse_factor);
+              it[(hour_pos + 15) % 16] = blend_colors(it[(hour_pos + 15) % 16].get(), hour_color, 0.3 * pulse_factor);
+
+              // Minute hand with fading glow
+              it[minute_pos] = blend_colors(it[minute_pos].get(), minute_color);
+              it[(minute_pos + 1) % 16] = blend_colors(it[(minute_pos + 1) % 16].get(), minute_color, 0.4 * pulse_factor);
+              it[(minute_pos + 15) % 16] = blend_colors(it[(minute_pos + 15) % 16].get(), minute_color, 0.4 * pulse_factor);
+
+              // Second hand with fading trailing effect
+              static int prev_second_pos = -1;
+              it[second_pos] = blend_colors(it[second_pos].get(), second_color);
+              if (prev_second_pos != -1 && prev_second_pos != second_pos) {
+                it[prev_second_pos] = blend_colors(it[prev_second_pos].get(), second_color, 0.6 * pulse_factor);
+                int trail_pos_2 = (prev_second_pos + 1) % 16;
+                if (trail_pos_2 != second_pos) {
+                  it[trail_pos_2] = blend_colors(it[trail_pos_2].get(), second_color, 0.3 * pulse_factor);
+                }
+              }
+              prev_second_pos = second_pos;
             
 sensor:
   - platform: template
