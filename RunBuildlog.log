@@ -6343,3 +6343,803 @@ micro_wake_word: [source common/smartv2-base.yaml:1177]
                                   id: play_sound
                                   priority: True
                                   sound_file: !lambda |-
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+script: [source common/smartv2-base.yaml:705]
+  - id: play_sound
+    parameters: 
+      priority: bool
+      sound_file_id: id
+    then: 
+      - 
+        Couldn't find ID 'sound_file_id'. Please check you have defined an ID with that name in your configuration.
+        lambda: !lambda |-
+          audio::AudioFile* sound_file = id(sound_file_id);
+          if (priority) {
+            id(external_media_player)
+              ->make_call()
+              .set_command(media_player::MediaPlayerCommand::MEDIA_PLAYER_COMMAND_STOP)
+              .set_announcement(true)
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+voice_assistant: [source smartv2-factory.yaml:6]
+  on_client_connected: 
+    then: 
+      - wait_until: 
+          condition: 
+            not: 
+              ble.enabled: {}
+      - delay: 2s
+      - if: 
+          condition: 
+            and: 
+              - lambda: !lambda |-
+                  return id(init_in_progress);
+              - switch.is_on: 
+                  id: mic_mute_switch
+          then: 
+            - switch.turn_off: 
+                id: mic_mute_switch
+      - lambda: !lambda |-
+          id(init_in_progress) = false;
+      - micro_wake_word.start: {}
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 1;
+      - script.execute: 
+          id: control_leds
+  id: va
+  microphone: nabu_mic_va
+  media_player: external_media_player
+  micro_wake_word: mww
+  use_wake_word: False
+  noise_suppression_level: 0
+  auto_gain: 0
+  volume_multiplier: 1.0
+  on_client_disconnected: 
+    then: 
+      - voice_assistant.stop: {}
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 10;
+      - script.execute: 
+          id: control_leds
+  on_error: 
+    then: 
+      - if: 
+          condition: 
+            and: 
+              - lambda: !lambda |-
+                  return !id(init_in_progress);
+              - lambda: !lambda |-
+                  return code != "duplicate_wake_up_detected";
+              - lambda: !lambda |-
+                  return code != "stt-no-text-recognized";
+          then: 
+            - lambda: !lambda |-
+                id(voice_assistant_phase) = 11;
+            - script.execute: 
+                id: control_leds
+  on_start: 
+    then: 
+      - mixer_speaker.apply_ducking: 
+          id: media_mixing_input
+          decibel_reduction: 20
+          duration: 0s
+  on_listening: 
+    then: 
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 2;
+      - script.execute: 
+          id: control_leds
+  on_stt_vad_start: 
+    then: 
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 3;
+      - script.execute: 
+          id: control_leds
+  on_stt_vad_end: 
+    then: 
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 4;
+      - script.execute: 
+          id: control_leds
+  on_tts_start: 
+    then: 
+      - logger.log: 
+          format: VA TTS start
+          args: []
+          level: DEBUG
+          tag: main
+      - text_sensor.template.publish: 
+          id: last_response_text
+          state: !lambda |-
+            return x;
+      - lambda: !lambda |-
+          id(voice_assistant_phase) = 5;
+      - script.execute: 
+          id: control_leds
+      - script.execute: 
+          id: activate_stop_word_if_tts_step_is_long
+  on_tts_end: 
+    then: 
+      - logger.log: 
+          format: VA TTS ended
+          args: []
+          level: DEBUG
+          tag: main
+      - text_sensor.template.publish: 
+          id: tts_uri
+          state: !lambda |-
+            return x;
+      - if: 
+          condition: 
+            lambda: !lambda |-
+              return !id(last_response_text).state.empty() && id(last_response_text).state.back() == '?';
+          then: 
+            - logger.log: 
+                format: Response ends with '?'. Waiting for TTS to finish
+                args: []
+                level: DEBUG
+                tag: main
+            - switch.turn_on: 
+                id: is_question_response_switch
+            - light.turn_on: 
+                id: voice_assistant_leds
+                effect: Question Response
+                state: True
+            - delay: 500ms
+            - wait_until: 
+                condition: 
+                  not: 
+                    media_player.is_announcing: {}
+                timeout: 3s
+            - logger.log: 
+                format: TTS playback finished
+                args: []
+                level: DEBUG
+                tag: main
+            - if: 
+                condition: 
+                  switch.is_on: 
+                    id: mic_mute_switch
+                then: 
+                  - logger.log: 
+                      format: Unmuting microphone for response
+                      args: []
+                      level: DEBUG
+                      tag: main
+                  - switch.turn_off: 
+                      id: mic_mute_switch
+            - if: 
+                condition: 
+                  switch.is_on: 
+                    id: wake_sound
+                then: 
+                  - script.execute: 
+                      
+                      Couldn't find ID 'play_sound'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "wake_sound", "mute_sound".
+                      id: play_sound
+                      priority: True
+                      sound_file: !lambda |-
+switch.template: [source common/smartv2-base.yaml:202]
+  platform: template
+  id: mic_mute_switch
+  name: Mic mute
+  icon: mdi:microphone-off
+  lambda: !lambda |-
+    if (id(mute_state).state) {
+      return true;
+    } else {
+      return false;
+    }
+  on_turn_on: 
+    - then: 
+        - if: 
+            condition: 
+              and: 
+                - lambda: !lambda |-
+                    return !id(init_in_progress);
+                - switch.is_on: 
+                    id: mute_sound
+            then: 
+              - script.execute: 
+                  
+                  Couldn't find ID 'play_sound'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "wake_sound", "mute_sound".
+                  id: play_sound
+                  priority: False
+                  sound_file: !lambda |-
+                    return id(mute_switch_on_sound);
+  on_turn_off: 
+    - then: 
+        - if: 
+            condition: 
+              and: 
+                - lambda: !lambda |-
+                    return !id(init_in_progress);
+                - switch.is_on: 
+                    id: mute_sound
+            then: 
+              - script.execute: 
+                  
+                  Couldn't find ID 'play_sound'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "wake_sound", "mute_sound".
+                  id: play_sound
+                  priority: False
+                  sound_file: !lambda |-
+script: [source common/smartv2-base.yaml:693]
+  - id: control_leds
+    then: 
+      - lambda: !lambda |-
+          id(check_if_timers_active).execute();
+          if (id(is_timer_active)){
+            id(fetch_first_active_timer).execute();
+          }
+          if (id(improv_ble_in_progress)) {
+            id(control_leds_improv_ble_state).execute();
+          } else if (id(init_in_progress)) {
+            id(control_leds_init_state).execute();
+          } else if (!id(wifi_id).is_connected() || !id(api_id).is_connected()){
+            id(control_leds_no_ha_connection_state).execute();
+          } else if (id(dial_touched)) {
+            id(control_leds_volume_changed).execute();
+          } else if (id(timer_ringing).state) {
+            id(control_leds_timer_ringing).execute();
+          } else if (id(voice_assistant_phase) == 2) {
+            id(control_leds_voice_assistant_waiting_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 3) {
+            id(control_leds_voice_assistant_listening_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 4) {
+            id(control_leds_voice_assistant_thinking_phase).execute();
+          } else if (id(voice_assistant_phase) == 5) {
+            id(control_leds_voice_assistant_replying_phase).execute();
+          } else if (id(voice_assistant_phase) == 11) {
+            id(control_leds_voice_assistant_error_phase).execute();
+          } else if (id(voice_assistant_phase) == 10) {
+            id(control_leds_voice_assistant_not_ready_phase).execute();
+          } else if (id(is_timer_active)) {
+            id(control_leds_timer_ticking).execute();
+          } else if (id(voice_assistant_phase) == 1) {
+            id(control_leds_voice_assistant_idle_phase).execute();
+          }
+    mode: single
+    parameters: {}
+  - id: control_leds_improv_ble_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.89
+          blue: 0.71
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_init_state
+    then: 
+      - if: 
+          condition: 
+            wifi.connected: {}
+          then: 
+            - light.turn_on: 
+                brightness: 0.5
+                red: 0.094
+                green: 0.733
+                blue: 0.9490000000000001
+                id: voice_assistant_leds
+                effect: Twinkle
+                state: True
+          else: 
+            - light.turn_on: 
+                id: voice_assistant_leds
+                effect: Rainbow
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_no_ha_connection_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_idle_phase
+    then: 
+      - light.turn_off: 
+          id: voice_assistant_leds
+          state: False
+      - if: 
+          condition: 
+            light.is_on: 
+              id: led_ring
+          then: 
+            - light.turn_on: 
+                id: led_ring
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_waiting_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Waiting for Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_listening_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Listening For Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_thinking_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Thinking
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_replying_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Replying
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_error_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Error
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_not_ready_phase
+    then: 
+      - light.turn_on: 
+          brightness: 0.66
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_volume_changed
+    mode: restart
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Volume Display
+          state: True
+      - delay: 2s
+      - script.execute: 
+          id: control_leds
+    parameters: {}
+  - id: control_leds_center_button_touched
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Center Button Touched
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ringing
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Timer Ring
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ticking
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Timer tick
+          state: True
+    mode: single
+    parameters: {}
+  - id: ring_timer
+    then: 
+      - script.execute: 
+          id: enable_repeat_one
+      - script.execute: 
+          
+          Couldn't find ID 'play_sound'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "wake_sound", "mute_sound".
+          id: play_sound
+          priority: True
+          sound_file: !lambda |-
+micro_wake_word: [source common/smartv2-base.yaml:1176]
+  id: mww
+  models: 
+    - model: 
+        url: |-
+          https://github.com/kahrendt/microWakeWord/releases/download/okay_nabu_20241226.3/okay_nabu.json
+        type: http
+      id: okay_nabu
+      internal: False
+    - model: 
+        url: |-
+          https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/hey_jarvis.json
+        type: http
+      id: hey_jarvis
+      internal: False
+    - model: 
+        url: |-
+          https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/hey_mycroft.json
+        type: http
+      id: hey_mycroft
+      internal: False
+    - model: 
+        url: https://github.com/kahrendt/microWakeWord/releases/download/stop/stop.json
+        type: http
+      id: stop
+      internal: True
+  vad: 
+    internal: False
+    model: 
+      url: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/vad.json
+      type: http
+  microphone: nabu_mic_mww
+  on_wake_word_detected: 
+    then: 
+      - if: 
+          condition: 
+            switch.is_off: 
+              id: mic_mute_switch
+          then: 
+            - if: 
+                condition: 
+                  switch.is_on: 
+                    id: timer_ringing
+                then: 
+                  - switch.turn_off: 
+                      id: timer_ringing
+                else: 
+                  - if: 
+                      condition: 
+                        media_player.is_announcing: {}
+                      then: 
+                        - media_player.stop: 
+                            announcement: True
+                      else: 
+                        - if: 
+                            condition: 
+                              switch.is_on: 
+                                id: wake_sound
+                            then: 
+                              - script.execute: 
+                                  
+                                  Couldn't find ID 'play_sound'. Please check you have defined an ID with that name in your configuration. These IDs look similar: "wake_sound", "mute_sound".
+                                  id: play_sound
+                                  priority: True
+                                  sound_file: !lambda |-
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+Failed config
+
+script: [source common/smartv2-base.yaml:693]
+  - id: control_leds
+    then: 
+      - lambda: !lambda |-
+          id(check_if_timers_active).execute();
+          if (id(is_timer_active)){
+            id(fetch_first_active_timer).execute();
+          }
+          if (id(improv_ble_in_progress)) {
+            id(control_leds_improv_ble_state).execute();
+          } else if (id(init_in_progress)) {
+            id(control_leds_init_state).execute();
+          } else if (!id(wifi_id).is_connected() || !id(api_id).is_connected()){
+            id(control_leds_no_ha_connection_state).execute();
+          } else if (id(dial_touched)) {
+            id(control_leds_volume_changed).execute();
+          } else if (id(timer_ringing).state) {
+            id(control_leds_timer_ringing).execute();
+          } else if (id(voice_assistant_phase) == 2) {
+            id(control_leds_voice_assistant_waiting_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 3) {
+            id(control_leds_voice_assistant_listening_for_command_phase).execute();
+          } else if (id(voice_assistant_phase) == 4) {
+            id(control_leds_voice_assistant_thinking_phase).execute();
+          } else if (id(voice_assistant_phase) == 5) {
+            id(control_leds_voice_assistant_replying_phase).execute();
+          } else if (id(voice_assistant_phase) == 11) {
+            id(control_leds_voice_assistant_error_phase).execute();
+          } else if (id(voice_assistant_phase) == 10) {
+            id(control_leds_voice_assistant_not_ready_phase).execute();
+          } else if (id(is_timer_active)) {
+            id(control_leds_timer_ticking).execute();
+          } else if (id(voice_assistant_phase) == 1) {
+            id(control_leds_voice_assistant_idle_phase).execute();
+          }
+    mode: single
+    parameters: {}
+  - id: control_leds_improv_ble_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.89
+          blue: 0.71
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_init_state
+    then: 
+      - if: 
+          condition: 
+            wifi.connected: {}
+          then: 
+            - light.turn_on: 
+                brightness: 0.5
+                red: 0.094
+                green: 0.733
+                blue: 0.9490000000000001
+                id: voice_assistant_leds
+                effect: Twinkle
+                state: True
+          else: 
+            - light.turn_on: 
+                id: voice_assistant_leds
+                effect: Rainbow
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_no_ha_connection_state
+    then: 
+      - light.turn_on: 
+          brightness: 0.5
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_idle_phase
+    then: 
+      - light.turn_off: 
+          id: voice_assistant_leds
+          state: False
+      - if: 
+          condition: 
+            light.is_on: 
+              id: led_ring
+          then: 
+            - light.turn_on: 
+                id: led_ring
+                state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_waiting_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Waiting for Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_listening_for_command_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Listening For Command
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_thinking_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Thinking
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_replying_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Replying
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_error_phase
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Error
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_voice_assistant_not_ready_phase
+    then: 
+      - light.turn_on: 
+          brightness: 0.66
+          red: 1.0
+          green: 0.0
+          blue: 0.0
+          id: voice_assistant_leds
+          effect: Twinkle
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_volume_changed
+    mode: restart
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Volume Display
+          state: True
+      - delay: 2s
+      - script.execute: 
+          id: control_leds
+    parameters: {}
+  - id: control_leds_center_button_touched
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Center Button Touched
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ringing
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return min ( max( id(led_ring).current_values.get_brightness() , 0.2f ) + 0.1f , 1.0f );
+          id: voice_assistant_leds
+          effect: Timer Ring
+          state: True
+    mode: single
+    parameters: {}
+  - id: control_leds_timer_ticking
+    then: 
+      - light.turn_on: 
+          brightness: !lambda |-
+            return max( id(led_ring).current_values.get_brightness() , 0.2f );
+          id: voice_assistant_leds
+          effect: Timer Tick
+          state: True
+    mode: single
+    parameters: {}
+  - id: ring_timer
+    then: 
+      - script.execute: 
+          id: enable_repeat_one
+      - script.execute: 
+          id: play_sound
+          priority: True
+          sound_file_id: timer_finished_sound
+    mode: single
+    parameters: {}
+  - id: enable_repeat_one
+    then: 
+      - lambda: !lambda |-
+          id(external_media_player)
+            ->make_call()
+            .set_command(media_player::MediaPlayerCommand::MEDIA_PLAYER_COMMAND_REPEAT_ONE)
+            .set_announcement(true)
+            .perform();
+          id(external_media_player)->set_playlist_delay_ms(speaker::AudioPipelineType::ANNOUNCEMENT, 500);
+    mode: single
+    parameters: {}
+  - id: disable_repeat
+    then: 
+      - lambda: !lambda |-
+          id(external_media_player)
+            ->make_call()
+            .set_command(media_player::MediaPlayerCommand::MEDIA_PLAYER_COMMAND_REPEAT_OFF)
+            .set_announcement(true)
+            .perform();
+          id(external_media_player)->set_playlist_delay_ms(speaker::AudioPipelineType::ANNOUNCEMENT, 0);
+    mode: single
+    parameters: {}
+  - id: fetch_first_active_timer
+    then: 
+      - lambda: !lambda |-
+          const auto timers = id(va).get_timers();
+          auto output_timer = timers.begin()->second;
+          for (auto &iterable_timer : timers) {
+            if (iterable_timer.second.is_active && iterable_timer.second.seconds_left <= output_timer.seconds_left) {
+              output_timer = iterable_timer.second;
+            }
+          }
+          id(first_active_timer) = output_timer;
+    mode: single
+    parameters: {}
+  - id: check_if_timers_active
+    then: 
+      - lambda: !lambda |-
+          const auto timers = id(va).get_timers();
+          bool output = false;
+          if (timers.size() > 0) {
+            for (auto &iterable_timer : timers) {
+              if(iterable_timer.second.is_active) {
+                output = true;
+              }
+            }
+          }
+          id(is_timer_active) = output;
+    mode: single
+    parameters: {}
+  - id: activate_stop_word_if_tts_step_is_long
+    then: 
+      - delay: 1s
+      - lambda: !lambda |-
+          id(stop).enable();
+    mode: single
+    parameters: {}
+  - id: play_sound
+    parameters: 
+      priority: bool
+      sound_file_id: id
+    then: 
+      - 
+        Couldn't find ID 'sound_file_id'. Please check you have defined an ID with that name in your configuration.
+        lambda: !lambda |-
+          audio::AudioFile* sound_file = id(sound_file_id);
+          if (priority) {

@@ -18,7 +18,7 @@ substitutions:
   hidden_ssid: "false"
 
 esphome:
-  project: 
+  project:
     name: armatec.smartv2 Satellite
     version: 2025.2.2
   name: smartv2-satellite
@@ -83,7 +83,7 @@ logger:
   initial_level: debug
   logs:
     sensor: WARN  # avoids logging debug sensor updates
-#  hardware_uart: uart0  #Uncomment to see serial logs via USB connection. Comment out after debufgging - this line introduces noise on speaker...
+#  hardware_uart: uart0  #Uncomment to see serial logs via USB connection. Comment out after debugging - this line introduces noise on speaker...
 
 select:
   - platform: logger
@@ -191,7 +191,7 @@ switch:
   # stateless momentary mic mute switch
   - platform: gpio
     internal: true
-    pin: 
+    pin:
       number: GPIO4 # D3
       inverted: true
     id: mute_toggle
@@ -219,7 +219,7 @@ switch:
             - script.execute:
                 id: play_sound
                 priority: false
-                sound_file: !lambda return id(mute_switch_on_sound);
+                sound_file_id: "mute_switch_on_sound"
     on_turn_off:
       - if:
           condition:
@@ -230,7 +230,7 @@ switch:
             - script.execute:
                 id: play_sound
                 priority: false
-                sound_file: !lambda return id(mute_switch_off_sound);
+                sound_file_id: "mute_switch_off_sound"
     turn_on_action:
       - switch.turn_on: mute_toggle
     turn_off_action:
@@ -259,7 +259,7 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
-  # Start if a question is recieved
+  # Start if a question is received
   - platform: template
     id: is_question_response_switch
     name: "Is Question Response"
@@ -276,7 +276,7 @@ switch:
       # Disable stop wake word
       - lambda: id(stop).disable();
       - script.execute: disable_repeat
-      # Stop any current annoucement (ie: stop the timer ring mid playback)
+      # Stop any current announcement (ie: stop the timer ring mid playback)
       - if:
           condition:
             media_player.is_announcing:
@@ -338,6 +338,18 @@ light:
         to: 15
         reversed: True
     effects:
+      - addressable_lambda:
+          name: "Startup Animation"
+          update_interval: 30ms
+          lambda: |-
+            static int pos = 0;
+            static float hue = 0.0f;
+            it.all() = Color::BLACK;
+            it[pos] = Color::from_hsv(hue * 360, 1.0, 1.0);
+            it[(pos + 6) % 17] = Color::from_hsv((hue + 0.33f) * 360, 1.0, 1.0);
+            it[(pos + 12) % 17] = Color::from_hsv((hue + 0.66f) * 360, 1.0, 1.0);
+            pos = (pos + 1) % 17;
+            hue = fmod(hue + 0.05f, 1.0f);
       - addressable_lambda:
           name: "Waiting for Command"
           update_interval: 60ms
@@ -742,24 +754,13 @@ script:
           effect: "Twinkle"
 
   # Script executed during initialization
-  # Blue Twinkle if Wifi is connected, Else rainbow
+  # Uses the Startup Animation effect
   - id: control_leds_init_state
     then:
-      - if:
-          condition:
-            wifi.connected:
-          then:
-            - light.turn_on:
-                brightness: 50%
-                red: 9.4%
-                green: 73.3%
-                blue: 94.9%
-                id: voice_assistant_leds
-                effect: "Twinkle"
-          else:
-            - light.turn_on:
-                id: voice_assistant_leds
-                effect: "Rainbow"
+      - light.turn_on:
+          id: voice_assistant_leds
+          brightness: 100%
+          effect: "Startup Animation"
 
   # Script executed when the device has no connection to Home Assistant
   # Red Twinkle (This will be visible during HA updates for example)
@@ -803,7 +804,7 @@ script:
           effect: "Listening For Command"
 
   # Script executed when the voice assistant is thinking to a command
-  # The spin stops and the 2 LEDs that are currently on and blinking indicating the commend is being processed.
+  # The spin stops and the 2 LEDs that are currently on and blinking indicating the command is being processed.
   - id: control_leds_voice_assistant_thinking_phase
     then:
       - light.turn_on:
@@ -880,7 +881,7 @@ script:
       - light.turn_on:
           brightness: !lambda return max( id(led_ring).current_values.get_brightness() , 0.2f );
           id: voice_assistant_leds
-          effect: "Timer tick"
+          effect: "Timer Tick"
 
   # Script executed when the timer is ringing, to playback sounds.
   - id: ring_timer
@@ -889,7 +890,7 @@ script:
       - script.execute:
           id: play_sound
           priority: true
-          sound_file: !lambda return id(timer_finished_sound);
+          sound_file_id: "timer_finished_sound"
 
   # Script executed when the timer is ringing, to repeat the timer finished sound.
   - id: enable_repeat_one
@@ -953,26 +954,57 @@ script:
       # Enable stop wake word
       - lambda: id(stop).enable();
 
+  # Script used to play sounds on the device.
+  - id: play_sound
+    parameters:
+      priority: bool
+      sound_file_id: string
+    then:
+      - lambda: |-
+          audio::AudioFile* sound_file = nullptr;
+          if (sound_file_id == "mute_switch_on_sound") {
+            sound_file = id(mute_switch_on_sound);
+          } else if (sound_file_id == "mute_switch_off_sound") {
+            sound_file = id(mute_switch_off_sound);
+          } else if (sound_file_id == "wake_word_triggered_sound") {
+            sound_file = id(wake_word_triggered_sound);
+          } else if (sound_file_id == "timer_finished_sound") {
+            sound_file = id(timer_finished_sound);
+          }
+          if (sound_file != nullptr) {
+            if (priority) {
+              id(external_media_player)
+                ->make_call()
+                .set_command(media_player::MediaPlayerCommand::MEDIA_PLAYER_COMMAND_STOP)
+                .set_announcement(true)
+                .perform();
+            }
+            if ( (id(external_media_player).state != media_player::MediaPlayerState::MEDIA_PLAYER_STATE_ANNOUNCING) || priority) {
+              id(external_media_player)
+                ->play_file(sound_file, true, false);
+            }
+          }
+
 i2s_audio:
   - id: i2s_output
-    i2s_lrclk_pin: 
+    i2s_lrclk_pin:
       number: GPIO7
       allow_other_uses: true
-    i2s_bclk_pin:  
+    i2s_bclk_pin:
       number: GPIO8
       allow_other_uses: true
-    i2s_mclk_pin:  
+    i2s_mclk_pin:
       number: GPIO9
       allow_other_uses: true
 
   - id: i2s_input
-    i2s_lrclk_pin:  
+    i2s_lrclk_pin:
       number: GPIO7
       allow_other_uses: true
-    i2s_bclk_pin:  
+    i2s_bclk_pin:
       number: GPIO8
       allow_other_uses: true
-    i2s_mclk_pin:  
+    i2s_mclk_pin:
       number: GPIO9
       allow_other_uses: true
 
@@ -1018,7 +1050,7 @@ speaker:
       - id: media_mixing_input
         timeout: never
 
-  # Vritual speakers to resample each pipelines' audio, if necessary, as the mixer speaker requires the same sample rate
+  # Virtual speakers to resample each pipelines' audio, if necessary, as the mixer speaker requires the same sample rate
   - platform: resampler
     id: announcement_resampling_speaker
     output_speaker: announcement_mixing_input
@@ -1164,7 +1196,7 @@ external_components:
       type: git
       url: https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration
       ref: main
-    components: 
+    components:
       - respeaker_lite
     refresh: 0s
 
@@ -1216,7 +1248,7 @@ micro_wake_word:
                             - script.execute:
                                 id: play_sound
                                 priority: true
-                                sound_file: !lambda return id(wake_word_triggered_sound);
+                                sound_file_id: "wake_word_triggered_sound"
                             - delay: 300ms
                       - voice_assistant.start:
                           wake_word: !lambda return wake_word;
@@ -1311,7 +1343,7 @@ voice_assistant:
                 - script.execute:
                     id: play_sound
                     priority: true
-                    sound_file: !lambda return id(wake_word_triggered_sound);
+                    sound_file_id: "wake_word_triggered_sound"
                 - delay: 200ms
           - voice_assistant.stop:
           - delay: 200ms
@@ -1394,10 +1426,10 @@ voice_assistant:
         id(next_timer_name).publish_state(id(first_active_timer).name);
   on_timer_tick:
     - script.execute: control_leds
-    - lambda: | 
+    - lambda: |
         int seconds_left = id(first_active_timer).seconds_left;
         if (std::abs(seconds_left) % 5 == 0) {
-          id(next_timer).publish_state(seconds_left); 
+          id(next_timer).publish_state(seconds_left);
         }
 
 button:
