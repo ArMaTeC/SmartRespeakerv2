@@ -344,10 +344,40 @@ light:
           lambda: |-
             static int pos = 0;
             static float hue = 0.0f;
+
+            // Custom HSV to RGB conversion function
+            auto hsv_to_rgb = [](float h, float s, float v) -> Color {
+              float c = v * s;  // Chroma
+              float x = c * (1 - fabs(fmod(h / 60.0, 2) - 1));
+              float m = v - c;
+              float r, g, b;
+
+              if (h >= 0 && h < 60) {
+                r = c; g = x; b = 0;
+              } else if (h >= 60 && h < 120) {
+                r = x; g = c; b = 0;
+              } else if (h >= 120 && h < 180) {
+                r = 0; g = c; b = x;
+              } else if (h >= 180 && h < 240) {
+                r = 0; g = x; b = c;
+              } else if (h >= 240 && h < 300) {
+                r = x; g = 0; b = c;
+              } else {
+                r = c; g = 0; b = x;
+              }
+
+              return Color((r + m) * 255, (g + m) * 255, (b + m) * 255);
+            };
+
+            // Clear all LEDs to black
             it.all() = Color::BLACK;
-            it[pos] = Color::from_hsv(hue * 360, 1.0, 1.0);
-            it[(pos + 6) % 17] = Color::from_hsv((hue + 0.33f) * 360, 1.0, 1.0);
-            it[(pos + 12) % 17] = Color::from_hsv((hue + 0.66f) * 360, 1.0, 1.0);
+
+            // Set colors at different positions with shifting hues
+            it[pos] = hsv_to_rgb(hue * 360, 1.0, 1.0);                // Hue 0
+            it[(pos + 6) % 17] = hsv_to_rgb((hue + 0.33f) * 360, 1.0, 1.0);  // Hue + 120°
+            it[(pos + 12) % 17] = hsv_to_rgb((hue + 0.66f) * 360, 1.0, 1.0); // Hue + 240°
+
+            // Update position and hue for animation
             pos = (pos + 1) % 17;
             hue = fmod(hue + 0.05f, 1.0f);
       - addressable_lambda:

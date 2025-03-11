@@ -7143,3 +7143,216 @@ script: [source common/smartv2-base.yaml:693]
         lambda: !lambda |-
           audio::AudioFile* sound_file = id(sound_file_id);
           if (priority) {
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Generating C++ source...
+INFO Updating https://github.com/espressif/esp-protocols.git@mdns-v1.5.1
+INFO Updating https://github.com/espressif/esp-tflite-micro@v1.3.1
+INFO Compiling app...
+Processing smartv2-satellite (board: esp32-s3-devkitc-1; framework: espidf; platform: https://github.com/pioarduino/platform-espressif32.git#51.03.07)
+--------------------------------------------------------------------------------
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+ - framework-espidf @ 3.50105.0 (5.1.5) 
+ - tool-cmake @ 3.21.3 
+ - tool-esptoolpy @ 4.8.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 11.2.0+20220823 
+ - tool-xtensa-esp-elf-gdb @ 11.2.0+20230208 
+ - toolchain-esp32ulp @ 2.35.0-20220830 
+ - toolchain-riscv32-esp @ 12.2.0+20230208 
+ - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
+Reading CMake configuration...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+|-- ESPMicroSpeechFeatures @ 1.1.0
+|-- Improv @ 1.2.4
+|-- esp-audio-libs @ 1.1.1
+|-- noise-c @ 0.1.6
+Compiling .pioenvs\smartv2-satellite\src\main.cpp.o
+In file included from src/esphome\components\i2s_audio\i2s_audio.h:5,
+                 from src/esphome.h:55,
+                 from src/main.cpp:3:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+In file included from src/esphome\components\improv_serial\improv_serial_component.h:20,
+                 from src/esphome.h:58:
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_ena_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:50:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   50 |     USB_SERIAL_JTAG.int_ena.val |= mask;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_disable_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:62:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   62 |     USB_SERIAL_JTAG.int_ena.val &= (~mask);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome\components\micro_wake_word\streaming_model.h:10,
+                 from src/esphome\components\micro_wake_word\micro_wake_word.h:6,
+                 from src/esphome.h:85:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\char_traits.h:42,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\string:40,
+                 from src/esphome/core/hal.h:2,
+                 from src/esphome/components/audio_dac/audio_dac.h:4,
+                 from src/esphome\components\aic3204\aic3204.h:3,
+                 from src/esphome.h:3:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+common/smartv2-base.yaml: In lambda function:
+common/smartv2-base.yaml:348:24: error: 'from_hsv' is not a member of 'esphome::Color'
+common/smartv2-base.yaml:349:35: error: 'from_hsv' is not a member of 'esphome::Color'
+common/smartv2-base.yaml:350:36: error: 'from_hsv' is not a member of 'esphome::Color'
+*** [.pioenvs\smartv2-satellite\src\main.cpp.o] Error 1
+========================= [FAILED] Took 43.84 seconds =========================
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+while parsing a block mapping
+  in "common/smartv2-base.yaml", line 1, column 1
+expected <block end>, but found '-'
+  in "common/smartv2-base.yaml", line 341, column 1
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+while parsing a block mapping
+  in "common/smartv2-base.yaml", line 1, column 1
+expected <block end>, but found '-'
+  in "common/smartv2-base.yaml", line 341, column 1
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+while parsing a block mapping
+  in "common/smartv2-base.yaml", line 1, column 1
+expected <block end>, but found '-'
+  in "common/smartv2-base.yaml", line 341, column 1
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+while parsing a block mapping
+  in "common/smartv2-base.yaml", line 1, column 1
+expected <block end>, but found '-'
+  in "common/smartv2-base.yaml", line 341, column 1
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+mapping values are not allowed here
+  in "common/smartv2-base.yaml", line 342, column 27
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+mapping values are not allowed here
+  in "common/smartv2-base.yaml", line 342, column 27
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+ERROR Error while reading config: Invalid YAML syntax:
+
+mapping values are not allowed here
+  in "common/smartv2-base.yaml", line 342, column 27
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Generating C++ source...
+INFO Updating https://github.com/espressif/esp-protocols.git@mdns-v1.5.1
+INFO Updating https://github.com/espressif/esp-tflite-micro@v1.3.1
+INFO Compiling app...
+Processing smartv2-satellite (board: esp32-s3-devkitc-1; framework: espidf; platform: https://github.com/pioarduino/platform-espressif32.git#51.03.07)
+--------------------------------------------------------------------------------
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+ - framework-espidf @ 3.50105.0 (5.1.5) 
+ - tool-cmake @ 3.21.3 
+ - tool-esptoolpy @ 4.8.1 
+ - tool-mklittlefs @ 3.2.0 
+ - tool-ninja @ 1.9.0 
+ - tool-riscv32-esp-elf-gdb @ 11.2.0+20220823 
+ - tool-xtensa-esp-elf-gdb @ 11.2.0+20230208 
+ - toolchain-esp32ulp @ 2.35.0-20220830 
+ - toolchain-riscv32-esp @ 12.2.0+20230208 
+ - toolchain-xtensa-esp32s3 @ 12.2.0+20230208
+Reading CMake configuration...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+|-- ESPMicroSpeechFeatures @ 1.1.0
+|-- Improv @ 1.2.4
+|-- esp-audio-libs @ 1.1.1
+|-- noise-c @ 0.1.6
+Compiling .pioenvs\smartv2-satellite\src\main.cpp.o
+In file included from src/esphome\components\i2s_audio\i2s_audio.h:5,
+                 from src/esphome.h:55,
+                 from src/main.cpp:3:
+C:/Users/karll/.platformio/packages/framework-espidf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress leagcy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+Linking .pioenvs\smartv2-satellite\bootloader.elf
+In file included from src/esphome\components\improv_serial\improv_serial_component.h:20,
+                 from src/esphome.h:58:
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_ena_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:50:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   50 |     USB_SERIAL_JTAG.int_ena.val |= mask;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h: In function 'void usb_serial_jtag_ll_disable_intr_mask(uint32_t)':
+C:/Users/karll/.platformio/packages/framework-espidf/components/hal/esp32s3/include/hal/usb_serial_jtag_ll.h:62:33: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+   62 |     USB_SERIAL_JTAG.int_ena.val &= (~mask);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from components/esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from components/esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from src/esphome\components\micro_wake_word\streaming_model.h:10,
+                 from src/esphome\components\micro_wake_word\micro_wake_word.h:6,
+                 from src/esphome.h:85:
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+components/esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\bits\char_traits.h:42,
+                 from c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\string:40,
+                 from src/esphome/core/hal.h:2,
+                 from src/esphome/components/audio_dac/audio_dac.h:4,
+                 from src/esphome\components\aic3204\aic3204.h:3,
+                 from src/esphome.h:3:
+c:\users\karll\.platformio\packages\toolchain-xtensa-esp32s3\xtensa-esp32s3-elf\include\c++\12.2.0\type_traits:757:5: note: declared here
+  757 |     is_pod
+      |     ^~~~~~
+Linking .pioenvs\smartv2-satellite\firmware.elf
+RAM:   [=         ]  13.1% (used 42796 bytes from 327680 bytes)
+Flash: [========  ]  77.6% (used 3051465 bytes from 3932160 bytes)
+Building .pioenvs\smartv2-satellite\firmware.bin
+Creating esp32s3 image...
+Successfully created esp32s3 image.
+esp32_create_combined_bin([".pioenvs\smartv2-satellite\firmware.bin"], [".pioenvs\smartv2-satellite\firmware.elf"])
+Wrote 0x2f9130 bytes to file H:\source\SmartRespeakerv2\.esphome\build\smartv2-satellite\.pioenvs\smartv2-satellite/firmware.factory.bin, ready to flash to offset 0x0
+esp32_copy_ota_bin([".pioenvs\smartv2-satellite\firmware.bin"], [".pioenvs\smartv2-satellite\firmware.elf"])
+========================= [SUCCESS] Took 46.91 seconds =========================
+INFO Successfully compiled program.
+INFO ESPHome 2025.2.2
+INFO Reading configuration smartv2-factory.yaml...
+INFO Updating https://github.com/esphome/home-assistant-voice-pe@dev
+INFO Updating https://github.com/formatBCE/home-assistant-voice-pe@48kHz_mic_support
+INFO Updating https://github.com/formatBCE/Respeaker-Lite-ESPHome-integration@main
+INFO Resolving IP address of smartv2-satellite.local in mDNS
+INFO Resolving IP address of smartv2-satellite.local
+INFO Connecting to 192.168.1.103 port 3232...
+INFO Connected to 192.168.1.103
+INFO Uploading H:\source\SmartRespeakerv2\.esphome\build\smartv2-satellite\.pioenvs\smartv2-satellite\firmware.bin (3051824 bytes)
+Uploading: [                                                            ] 0% Uploading: [=                                                           ] 1% Uploading: [=                                                           ] 2% Uploading: [==                                                          ] 3% Uploading: [==                                                          ] 4% Uploading: [===                                                         ] 5% Uploading: [====                                                        ] 6% Uploading: [====                                                        ] 7% Uploading: [=====                                                       ] 8% Uploading: [=====                                                       ] 9% Uploading: [======                                                      ] 10% Uploading: [=======                                                     ] 11% Uploading: [=======                                                     ] 12% Uploading: [========                                                    ] 13% Uploading: [=========                                                   ] 14% Uploading: [=========                                                   ] 15% Uploading: [==========                                                  ] 16% Uploading: [==========                                                  ] 17% Uploading: [===========                                                 ] 18% Uploading: [===========                                                 ] 19% Uploading: [============                                                ] 20% Uploading: [=============                                               ] 21% Uploading: [=============                                               ] 22% Uploading: [==============                                              ] 23% Uploading: [==============                                              ] 24% Uploading: [===============                                             ] 25% Uploading: [================                                            ] 26% Uploading: [================                                            ] 27% Uploading: [=================                                           ] 28% Uploading: [==================                                          ] 29% Uploading: [==================                                          ] 30% Uploading: [===================                                         ] 31% Uploading: [===================                                         ] 32% Uploading: [====================                                        ] 33% Uploading: [====================                                        ] 34% Uploading: [=====================                                       ] 35% Uploading: [======================                                      ] 36% Uploading: [======================                                      ] 37% Uploading: [=======================                                     ] 38% Uploading: [========================                                    ] 39% Uploading: [========================                                    ] 40% Uploading: [=========================                                   ] 41% Uploading: [=========================                                   ] 42% Uploading: [==========================                                  ] 43% Uploading: [==========================                                  ] 44% Uploading: [===========================                                 ] 45% Uploading: [============================                                ] 46% Uploading: [============================                                ] 47% Uploading: [=============================                               ] 48% Uploading: [=============================                               ] 49% Uploading: [==============================                              ] 50% Uploading: [===============================                             ] 51% Uploading: [===============================                             ] 52% Uploading: [================================                            ] 53% Uploading: [=================================                           ] 54% Uploading: [=================================                           ] 55% Uploading: [==================================                          ] 56% Uploading: [==================================                          ] 57% Uploading: [===================================                         ] 58% Uploading: [===================================                         ] 59% Uploading: [====================================                        ] 60% Uploading: [=====================================                       ] 61% Uploading: [=====================================                       ] 62% Uploading: [======================================                      ] 63% Uploading: [======================================                      ] 64% Uploading: [=======================================                     ] 65% Uploading: [========================================                    ] 66% Uploading: [========================================                    ] 67% Uploading: [=========================================                   ] 68% Uploading: [==========================================                  ] 69% Uploading: [==========================================                  ] 70% Uploading: [===========================================                 ] 71% Uploading: [===========================================                 ] 72% Uploading: [============================================                ] 73% Uploading: [============================================                ] 74% Uploading: [=============================================               ] 75% Uploading: [==============================================              ] 76% Uploading: [==============================================              ] 77% Uploading: [===============================================             ] 78% Uploading: [================================================            ] 79% Uploading: [================================================            ] 80% Uploading: [=================================================           ] 81% Uploading: [=================================================           ] 82% Uploading: [==================================================          ] 83% Uploading: [==================================================          ] 84% Uploading: [===================================================         ] 85% Uploading: [====================================================        ] 86% Uploading: [====================================================        ] 87% Uploading: [=====================================================       ] 88% Uploading: [=====================================================       ] 89% Uploading: [======================================================      ] 90% Uploading: [=======================================================     ] 91% Uploading: [=======================================================     ] 92% Uploading: [========================================================    ] 93% Uploading: [=========================================================   ] 94% Uploading: [=========================================================   ] 95% Uploading: [==========================================================  ] 96% Uploading: [==========================================================  ] 97% Uploading: [=========================================================== ] 98% Uploading: [=========================================================== ] 99% Uploading: [============================================================] 100% Done...
+
+INFO Upload took 14.04 seconds, waiting for result...
+INFO OTA successful
+INFO Successfully uploaded program.
