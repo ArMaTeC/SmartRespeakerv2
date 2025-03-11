@@ -563,6 +563,35 @@ light:
               }
             }
             index = (index + 1) % 17;
+
+  # User facing LED ring. Remapping of the internal LEDs.
+  # Exposed to be used by the user.
+  - platform: partition
+    id: led_ring
+    name: LED Ring
+    entity_category: config
+    icon: "mdi:circle-outline"
+    default_transition_length: 0ms
+    restore_mode: RESTORE_DEFAULT_OFF
+    initial_state:
+      color_mode: rgb
+      brightness: 66%
+      red: 9.4%
+      green: 73.3%
+      blue: 94.9%
+    segments:
+      - id: leds_internal
+        from: 0
+        to: 8
+        reversed: True
+      - id: leds_internal
+        from: 9
+        to: 15
+        reversed: True
+    effects:
+      - addressable_rainbow:
+          name: "Rainbow"
+          width: 17
       - pulse:
           name: "Idle Breathing"
           transition_length: 2000ms
@@ -664,35 +693,6 @@ light:
             }
             call.set_brightness(0.75);
             call.perform();
-  # User facing LED ring. Remapping of the internal LEDs.
-  # Exposed to be used by the user.
-  - platform: partition
-    id: led_ring
-    name: LED Ring
-    entity_category: config
-    icon: "mdi:circle-outline"
-    default_transition_length: 0ms
-    restore_mode: RESTORE_DEFAULT_OFF
-    initial_state:
-      color_mode: rgb
-      brightness: 66%
-      red: 9.4%
-      green: 73.3%
-      blue: 94.9%
-    segments:
-      - id: leds_internal
-        from: 0
-        to: 8
-        reversed: True
-      - id: leds_internal
-        from: 9
-        to: 15
-        reversed: True
-    effects:
-      - addressable_rainbow:
-          name: "Rainbow"
-          width: 17
-
 sensor:
   - platform: template
     id: next_timer
