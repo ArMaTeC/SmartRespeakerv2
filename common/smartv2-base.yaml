@@ -62,6 +62,34 @@ esp32:
       CONFIG_BT_BLE_DYNAMIC_ENV_MEMORY: "y"
       CONFIG_MBEDTLS_EXTERNAL_MEM_ALLOC: "y"
       CONFIG_MBEDTLS_SSL_PROTO_TLS1_3: "y"  # TLS1.3 support isn't enabled by default in IDF 5.1.5
+      CONFIG_ESP32_S3_BOX_BOARD: "y"
+      CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY: "y"
+      CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP: "y"
+      # Settings based on https://github.com/espressif/esp-adf/issues/297#issuecomment-783811702
+      CONFIG_ESP32_WIFI_STATIC_RX_BUFFER_NUM: "16"
+      CONFIG_ESP32_WIFI_DYNAMIC_RX_BUFFER_NUM: "512"
+      CONFIG_ESP32_WIFI_STATIC_TX_BUFFER: "y"
+      CONFIG_ESP32_WIFI_TX_BUFFER_TYPE: "0"
+      CONFIG_ESP32_WIFI_STATIC_TX_BUFFER_NUM: "8"
+      CONFIG_ESP32_WIFI_CACHE_TX_BUFFER_NUM: "32"
+      CONFIG_ESP32_WIFI_AMPDU_TX_ENABLED: "y"
+      CONFIG_ESP32_WIFI_TX_BA_WIN: "16"
+      CONFIG_ESP32_WIFI_AMPDU_RX_ENABLED: "y"
+      CONFIG_ESP32_WIFI_RX_BA_WIN: "32"
+      CONFIG_LWIP_MAX_ACTIVE_TCP: "16"
+      CONFIG_LWIP_MAX_LISTENING_TCP: "16"
+      CONFIG_TCP_MAXRTX: "12"
+      CONFIG_TCP_SYNMAXRTX: "6"
+      CONFIG_TCP_MSS: "1436"
+      CONFIG_TCP_MSL: "60000"
+      CONFIG_TCP_SND_BUF_DEFAULT: "65535"
+      CONFIG_TCP_WND_DEFAULT: "65535"  # Adjusted from linked settings to avoid compilation error
+      CONFIG_TCP_RECVMBOX_SIZE: "512"
+      CONFIG_TCP_QUEUE_OOSEQ: "y"
+      CONFIG_TCP_OVERSIZE_MSS: "y"
+      CONFIG_LWIP_WND_SCALE: "y"
+      CONFIG_TCP_RCV_SCALE: "3"
+      CONFIG_LWIP_TCPIP_RECVMBOX_SIZE: "512"
 
 wifi:
   networks:
@@ -90,6 +118,10 @@ select:
     id: logger_select
     name: Logger Level
     disabled_by_default: true
+
+time:
+  - platform: homeassistant
+    id: time_id
 
 api:
   encryption:
@@ -693,6 +725,35 @@ light:
             }
             call.set_brightness(0.75);
             call.perform();
+      - addressable_lambda:
+          name: "Analog Clock Effect"
+          update_interval: 100ms
+          lambda: |-
+            #include <cmath>
+            static int total_leds = 16;
+            static Color base_color = Color(30, 30, 30);
+            auto now = id(time_id).now();
+            int hour = now.hour % 12;
+            int minute = now.minute;
+            int second = now.second;
+            int second_pos = (15 - (int)(round((float)second * 16 / 60.0f))) % 16;
+            int minute_pos = (15 - (int)(round((float)minute * 16 / 60.0f))) % 16;
+            int hour_pos = (15 - (int)(round((float)hour * 16 / 12.0f + (float)minute / 60.0f * (16 / 12.0f)))) % 16;
+            for (int i = 0; i < total_leds; i++) {
+              it[i] = base_color;
+            }
+            Color second_color = Color(255, 0, 0);
+            Color minute_color = Color(0, 255, 0);
+            Color hour_color = Color(0, 0, 255);
+            Color marker_color = Color(255, 255, 255);
+            it[0] = marker_color;
+            it[4] = marker_color;
+            it[8] = marker_color;
+            it[12] = marker_color;
+            it[hour_pos] = hour_color;
+            it[minute_pos] = minute_color;
+            it[second_pos] = second_color;
+            
 sensor:
   - platform: template
     id: next_timer
