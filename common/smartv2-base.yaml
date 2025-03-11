@@ -93,7 +93,7 @@ select:
 
 api:
   encryption:
-    key: "t1U0ESXLJgOt1Oh1RrKX8WpdajP1vr6yVe/QMFHSIkU="
+    key: "ZZRPoFVkhHCwSCSqP+5vWvRG3odJ+4OBDa5Oeqyoi1E="
   id: api_id
   actions:
     - action: start_va
