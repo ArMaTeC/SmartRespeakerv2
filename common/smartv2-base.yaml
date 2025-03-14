@@ -20,7 +20,7 @@ substitutions:
 esphome:
   project:
     name: armatec.smartv2 Satellite
-    version: 2025.2.2
+    version: 2025.3.0
   name: smartv2-satellite
   friendly_name: smartv2 Satellite
   name_add_mac_suffix: true
@@ -1210,7 +1210,7 @@ speaker:
 media_player:
   - platform: speaker
     id: external_media_player
-    name: Media Player
+    name: None
     internal: False
     volume_increment: 0.05
     volume_min: 0.4
@@ -1364,6 +1364,7 @@ micro_wake_word:
       id: stop
       internal: true
   vad:
+  probability_cutoff: 0.05
   microphone: nabu_mic_mww
   on_wake_word_detected:
     # If the wake word is detected when the device is muted (Possible with the software mute switch): Do nothing
